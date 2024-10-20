@@ -3,7 +3,7 @@
 {
   programs = {
     rofi = {
-      enable = true ;
+      enable = true;
     };
   };
 }

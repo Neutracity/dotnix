@@ -2,7 +2,7 @@
 
 {
   programs.kitty = {
-    enable = true ;
+    enable = true;
     #font.package = pkgs.Hack ;
     #font.name = "Hack" ;
     #font.name = "jetbrains mono nerd font" ;
@@ -14,7 +14,7 @@
       shell = "zsh";
       #lib.mkForce.background_opacity = "0";
     };
-    shellIntegration.enableZshIntegration = true ;
-      
+    shellIntegration.enableZshIntegration = true;
+
   };
 }

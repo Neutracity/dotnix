@@ -30,16 +30,16 @@
 
       oh-my-zsh = {
         enable = true;
-	    theme = "agnoster";
-	    plugins = [
+        theme = "agnoster";
+        plugins = [
           "git"
           "kitty"
           "zoxide"
           "sudo"
           "thefuck"
-	    ];
-	  };
-	  
+        ];
+      };
+
       enableCompletion = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;

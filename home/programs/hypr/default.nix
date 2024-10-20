@@ -27,8 +27,8 @@
     direnv
     meson
   ];
-  
-  
+
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -36,7 +36,7 @@
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "anyrun";
-      
+
       monitor = [
         "eDP-1, 1920x1080@60.04Hz, auto, 1.25"
       ];
@@ -47,48 +47,48 @@
         border_size = 1;
         resize_on_border = true;
       };
-      
+
       decoration = {
         rounding = 5;
         #active_opacity = 1.0;
         #inactive_opacity = 0.95 ;
         blur = {
-          enabled = true ;
-          size = 3 ;
-          vibrancy = 0.1696 ;
+          enabled = true;
+          size = 3;
+          vibrancy = 0.1696;
         };
       };
 
       input = {
-        kb_layout = "us" ;
-        follow_mouse = 1 ;
-        touchpad.natural_scroll = "yes" ;
-        numlock_by_default = true ;
+        kb_layout = "us";
+        follow_mouse = 1;
+        touchpad.natural_scroll = "yes";
+        numlock_by_default = true;
         force_no_accel = 1;
-        sensitivity = 0 ;
+        sensitivity = 0;
       };
 
       gestures = {
-        workspace_swipe = true ;
-        workspace_swipe_fingers = 3 ;
+        workspace_swipe = true;
+        workspace_swipe_fingers = 3;
       };
-      
+
       misc = {
-        vrr = 0 ;
-        disable_hyprland_logo = true ;
-        disable_splash_rendering = true ;
-        force_default_wallpaper = 0 ;
+        vrr = 0;
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+        force_default_wallpaper = 0;
       };
 
       xwayland = {
-        force_zero_scaling = true ;
+        force_zero_scaling = true;
       };
 
       exec-once = [
         "waybar"
         "swww-daemon --format xrgb"
       ];
-      
+
       env = [
         "GDK_SCALE, 1"
         "XCURSOR_SIZE, 32"
@@ -105,9 +105,9 @@
 
 
       ];
-      
 
-      bind = 
+
+      bind =
         [
           "$mod, F, exec, firefox"
           "$mod, Q, exec, kitty"
@@ -119,9 +119,9 @@
 
           "$mod SHIFT, S, exec, hyprshot -m region -s"
           "$mod SHIFT, M, exec, pkill waybar || waybar "
-          
-          
-          
+
+
+
 
           #windows management
 

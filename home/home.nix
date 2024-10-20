@@ -1,4 +1,4 @@
-{inputs, stylix, hyprland, config, pkgs, ... }:
+{ inputs, stylix, hyprland, config, pkgs, ... }:
 
 {
   imports = [
@@ -8,14 +8,13 @@
 
   home.username = "neutra";
   home.homeDirectory = "/home/neutra";
-  
-  home.stateVersion = "24.05"; 
+
+  home.stateVersion = "24.05";
 
   home.packages = (with pkgs; [
   ]);
 
-  home.file = {
-  };
+  home.file = { };
 
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -23,13 +22,13 @@
 
   #Stylix config
 
-  stylix.enable = true; 
+  stylix.enable = true;
   stylix.polarity = "dark";
   stylix.image = ./src/wallpaper/evangelion_1.jpg;
   #stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-   stylix.fonts = {
+  stylix.fonts = {
     serif = {
-      package = pkgs.nerdfonts.override {fonts = ["Hack"];};
+      package = pkgs.nerdfonts.override { fonts = [ "Hack" ]; };
       name = "Hack";
     };
 

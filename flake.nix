@@ -10,7 +10,7 @@
     };
 
     swww.url = "github:LGFae/swww";
-    
+
     stylix.url = "github:danth/stylix";
 
     anyrun = {
@@ -38,20 +38,21 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
+    in
+    {
       # Nixos declaration
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs swww anyrun;};
+        specialArgs = { inherit inputs swww anyrun; };
         modules = [ ./configuration.nix inputs.stylix.nixosModules.stylix ];
         #environment.systemPackages = [ anyrun.packages.${system}.anyrun ];
       };
-
+      formatter.${system} = pkgs.nixpkgs-fmt;
       # Home manager declaration
       homeConfigurations."neutra" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./home/home.nix stylix.homeManagerModules.stylix anyrun.homeManagerModules.default ];
         extraSpecialArgs = {
-          inherit inputs spicetify-nix anyrun ;
+          inherit inputs spicetify-nix anyrun;
         };
 
       };
