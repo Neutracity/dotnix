@@ -68,7 +68,7 @@
     variant = "";
   };
 
-  console.keyMap = "fr";
+  console.keyMap = "us";
 
   services.printing.enable = true;
 
@@ -129,6 +129,7 @@
     cava
     zoxide
     killall
+    home-manager
   ];
 
   stylix.enable = true;

@@ -23,11 +23,16 @@
         gc = "git commit -m";
         gp = "git push";
         gpt = "git push --follow-tags";
-        gt = "git tags -ma";
+        gt = "git tag -ma";
         gs = "git status";
         gl = "git log";
       };
 
+      initExtra =''
+        prompt_dir() {
+        prompt_segment blue $CURRENT_FG '%1~'
+        }
+      '';
       oh-my-zsh = {
         enable = true;
         theme = "agnoster";
