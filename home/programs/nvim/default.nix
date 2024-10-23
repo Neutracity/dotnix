@@ -50,7 +50,10 @@
           plugin = gruvbox-nvim;
           config = "colorscheme gruvbox";
         }
-
+        { 
+          plugin = nvim-tree-lua;
+          config = toLua "require(\"nvim-tree\").setup()";
+        }
         neodev-nvim
         nvim-cmp
         {
@@ -88,7 +91,6 @@
         }
 
         vim-nix
-
         # {
         #   plugin = vimPlugins.own-onedark-nvim;
         #   config = "colorscheme onedark";
@@ -97,6 +99,8 @@
 
 
       extraLuaConfig = ''
+        set relativenumber
+        set number
         ${builtins.readFile ./nvim/options.lua}
         ${builtins.readFile ./nvim/plugin/lsp.lua}
         ${builtins.readFile ./nvim/plugin/cmp.lua}
