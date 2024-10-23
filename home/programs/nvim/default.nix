@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   nixpkgs = {
@@ -31,6 +31,7 @@
         nil
         xclip
         wl-clipboard
+        alejandra
       ];
 
       plugins = with pkgs.vimPlugins; [
