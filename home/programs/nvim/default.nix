@@ -94,18 +94,15 @@
         # }
       ];
 
+
       extraLuaConfig = ''
         ${builtins.readFile ./nvim/options.lua}
+        ${builtins.readFile ./nvim/plugin/lsp.lua}
+        ${builtins.readFile ./nvim/plugin/cmp.lua}
+        ${builtins.readFile ./nvim/plugin/telescope.lua}
+        ${builtins.readFile ./nvim/plugin/treesitter.lua}
+        ${builtins.readFile ./nvim/plugin/other.lua}
       '';
-
-      # extraLuaConfig = ''
-      #   ${builtins.readFile ./nvim/options.lua}
-      #   ${builtins.readFile ./nvim/plugin/lsp.lua}
-      #   ${builtins.readFile ./nvim/plugin/cmp.lua}
-      #   ${builtins.readFile ./nvim/plugin/telescope.lua}
-      #   ${builtins.readFile ./nvim/plugin/treesitter.lua}
-      #   ${builtins.readFile ./nvim/plugin/other.lua}
-      # '';
     };
 
 }
