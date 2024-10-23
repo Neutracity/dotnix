@@ -130,6 +130,7 @@
     zoxide
     killall
     home-manager
+    nixd
   ];
 
   stylix.enable = true;

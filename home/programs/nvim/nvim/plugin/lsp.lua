@@ -33,7 +33,7 @@ require('lspconfig').lua_ls.setup {
 	root_dir = function()
         return vim.loop.cwd()
     end,
-	cmd = { "nil" },
+	cmd = { "nixd" },
     settings = {
         Lua = {
             workspace = { checkThirdParty = false },
