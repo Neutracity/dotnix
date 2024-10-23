@@ -26,6 +26,7 @@
     wayland-protocols
     direnv
     meson
+    swaylock-effects
   ];
 
 
@@ -120,6 +121,7 @@
           "$mod SHIFT, S, exec, hyprshot -m region -s"
           "$mod SHIFT, M, exec, pkill waybar || waybar "
 
+          "$mod SHIFT, L, exec, swaylock"
 
 
 
