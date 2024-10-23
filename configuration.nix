@@ -57,9 +57,8 @@
   };
   services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
-  #services.displayManager.sddm.enable = true;
-  #services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.theme = "where-is-my-sddm-theme";
   programs.hyprland.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -131,6 +130,7 @@
     killall
     home-manager
     nixd
+    (callPackage sddm-theme-winst.nix {})
   ];
 
   stylix.enable = true;
