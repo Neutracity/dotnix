@@ -11,7 +11,7 @@
       owner = "stepanzubkov";
       repo = "where-is-my-sddm-theme";
       rev ="6f9a9f6884e08cbc82696fd823310c0f98622f49";
-      sha256 = "qoLSRnQOvH3rAH+G1eRrcf9ZB6WlSRIZjYZBOTkew/0=";
+      sha256 = "EzO+MTz1PMmgeKyw65aasetmjUCpvilcvePt6HJZrpo=";
     };
 }  
 
