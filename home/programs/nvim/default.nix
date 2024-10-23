@@ -99,8 +99,6 @@
 
 
       extraLuaConfig = ''
-        set relativenumber
-        set number
         ${builtins.readFile ./nvim/options.lua}
         ${builtins.readFile ./nvim/plugin/lsp.lua}
         ${builtins.readFile ./nvim/plugin/cmp.lua}
