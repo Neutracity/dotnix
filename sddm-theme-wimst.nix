@@ -1,5 +1,4 @@
-{ fetchFromGitHub }:
-{
+{stdenv, fetchFromGitHub }:
  stdenv.mkDerivation rec {
     pname = "where-is-my-sddm-theme";
     version = "v1.11.0";
@@ -14,6 +13,5 @@
       rev ="6f9a9f6884e08cbc82696fd823310c0f98622f49";
       sha256 = "qoLSRnQOvH3rAH+G1eRrcf9ZB6WlSRIZjYZBOTkew/0=";
     };
-  };  
-}
+}  
 

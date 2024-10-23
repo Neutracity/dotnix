@@ -130,7 +130,9 @@
     killall
     home-manager
     nixd
-    (callPackage sddm-theme-winst.nix {})
+    libsForQt5.qt5.qtgraphicaleffects 
+
+    (callPackage ./sddm-theme-wimst.nix {})
   ];
 
   stylix.enable = true;
