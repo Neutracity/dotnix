@@ -13,7 +13,7 @@
       ./locales.nix
       ./packages.nix
       ./users.nix
-      ./wm.nix
+      ./hyprland.nix
       ./nixsettings.nix
       ./stylix.nix
     ];
@@ -27,12 +27,6 @@
 
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.theme = "where-is-my-sddm-theme";
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  console.keyMap = "us";
 
   services.printing.enable = true;
 
