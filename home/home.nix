@@ -4,6 +4,7 @@
   imports = [
     ./programs
     ./src/script
+    ../stylix.nix
   ];
 
   home.username = "neutra";
@@ -20,20 +21,8 @@
     EDITOR = "nvim";
   };
 
-  #Stylix config
-
-  stylix.enable = true;
-  stylix.polarity = "dark";
-  stylix.image = ./src/wallpaper/evangelion_1.jpg;
-  #stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-  stylix.fonts = {
-    serif = {
-      package = pkgs.nerdfonts.override { fonts = [ "Hack" ]; };
-      name = "Hack";
-    };
-
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
+
