@@ -2,6 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     inputs.swww.packages.${pkgs.system}.swww
+    zsh-powerlevel10k
     playerctl
     vim
     wget
