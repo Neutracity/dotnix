@@ -12,7 +12,7 @@
     qt5.qtwayland
     qt6.qtwayland
     libsForQt5.qt5ct
-    libsForQt6.qt6ct
+    qt6ct
     hyprshot
     swappy
     wf-recorder
