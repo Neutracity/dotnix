@@ -15,6 +15,8 @@
         econfig = "nvim /home/neutra/.dotfiles/configuration.nix";
         eflake = "nvim /home/neutra/.dotfiles/flake.nix";
         nr = "sudo nixos-rebuild switch --flake /home/neutra/.dotfiles#default";
+        nu = "sudo nixos-rebuild switch --upgrade-all";
+        fu = "nix flake update -I /home/neutra/.dotfiles/flake.nix";
         hr = "home-manager switch --flake /home/neutra/.dotfiles";
         se = "sudoedit";
         ff = "fastfetch";
