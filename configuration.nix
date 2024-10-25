@@ -14,6 +14,8 @@
       ./packages.nix
       ./users.nix
       ./wm.nix
+      ./nixsettings.nix
+      ./stylix.nix
     ];
 
 
@@ -21,18 +23,6 @@
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   xdg.portal.config.common.default = "gtk";
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings = {
-    builders-use-substitutes = true;
-    # extra substituters to add
-    extra-substituters = [
-      "https://anyrun.cachix.org"
-    ];
-
-    extra-trusted-public-keys = [
-      "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
-    ];
-  };
   services.xserver.enable = true;
 
   services.displayManager.sddm.enable = true;
@@ -62,13 +52,8 @@
 
 
 
-  nixpkgs.config.allowUnfree = true;
 
 
-  stylix.enable = true;
-  #stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-  stylix.polarity = "dark";
-  stylix.image = ./home/src/wallpaper/evangelion_1.jpg;
 
 
   programs.kdeconnect.enable = true;
@@ -79,13 +64,6 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-  nix.settings.auto-optimise-store = true;
-  nix.optimise.automatic = true;
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 14d";
-  };
 
   system.stateVersion = "24.05";
 
