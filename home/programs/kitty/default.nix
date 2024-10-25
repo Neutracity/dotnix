@@ -13,7 +13,7 @@
       cursor_shape = "beam";
       enable_audio_bell = false;
       shell = "zsh";
-      #lib.mkForce.background_opacity = "0";
+      background_opacity = 0;
     };
     shellIntegration.enableZshIntegration = true;
 
