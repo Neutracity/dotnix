@@ -11,8 +11,8 @@
     imv
     qt5.qtwayland
     qt6.qtwayland
-    qt5ct
-    qt6ct
+    libsForGt5.qt5ct
+    libsForGt6.qt6ct
     hyprshot
     swappy
     wf-recorder
