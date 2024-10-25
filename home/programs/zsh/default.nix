@@ -5,12 +5,12 @@
     zsh = {
       enable = true;
       shellAliases = {
-        ls = "${pkgs.eza}/bin/eza --icons=auto ";
-        l = "${pkgs.eza}/bin/eza -lah --icons=auto";
-        ll = "${pkgs.eza}/bin/eza -l --icons=auto";
-        la = "${pkgs.eza}/bin/eza -a --icons=auto ";
-        lt = "${pkgs.eza}/bin/eza --tree --icons=auto";
-        lla = "${pkgs.eza}/bin/eza -la --icons=auto";
+        ls = "${pkgs.eza}/bin/eza --icons=auto --header --group-directories-first";
+        l = "${pkgs.eza}/bin/eza -lah --icons=auto --header --group-directories-first";
+        ll = "${pkgs.eza}/bin/eza -l --icons=auto --header --group-directories-first";
+        la = "${pkgs.eza}/bin/eza -a --icons=auto --header --group-directories-first";
+        lt = "${pkgs.eza}/bin/eza --tree --icons=auto --header --group-directories-first";
+        lla = "${pkgs.eza}/bin/eza -la --icons=auto --header --group-directories-first";
         ezsh = "nvim /home/neutra/.dotfiles/home/programs/zsh/default.nix";
         econfig = "nvim /home/neutra/.dotfiles/configuration.nix";
         eflake = "nvim /home/neutra/.dotfiles/flake.nix";
