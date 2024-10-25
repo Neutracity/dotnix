@@ -8,37 +8,15 @@
       ./hardware-configuration.nix
       ./hardware-acceleration.nix
       ./rider.nix
+      ./bootloader.nix
+      ./network.nix
+      ./locales.nix
+      ./packages.nix
+      ./users.nix
+      ./wm.nix
     ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
-
-  networking.networkmanager.enable = true;
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 33471 ];
-    allowedUDPPorts = [ 33471 51820 ];
-    allowedTCPPortRanges = [{ from = 1714; to = 1764; }]; # for Gsconnect
-    allowedUDPPortRanges = [{ from = 1714; to = 1764; }]; # for Gsconnect
-  };
-  networking.firewall.checkReversePath = false;
-  time.timeZone = "Europe/Paris";
-  i18n.defaultLocale = "en_US.UTF-8";
-  nixpkgs.config.allowBroken = true;
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "fr_FR.UTF-8";
-    LC_IDENTIFICATION = "fr_FR.UTF-8";
-    LC_MEASUREMENT = "fr_FR.UTF-8";
-    LC_MONETARY = "fr_FR.UTF-8";
-    LC_NAME = "fr_FR.UTF-8";
-    LC_NUMERIC = "fr_FR.UTF-8";
-    LC_PAPER = "fr_FR.UTF-8";
-    LC_TELEPHONE = "fr_FR.UTF-8";
-    LC_TIME = "fr_FR.UTF-8";
-  };
 
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   xdg.portal.config.common.default = "gtk";
@@ -59,9 +37,6 @@
 
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.theme = "where-is-my-sddm-theme";
-  programs.hyprland.enable = true;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
   services.xserver.xkb = {
     layout = "us";
     variant = "";
@@ -86,54 +61,9 @@
   services.libinput.enable = true;
 
 
-  users.users.neutra = {
-    isNormalUser = true;
-    description = "neutra";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-      thunderbird
-    ];
-  };
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    inputs.swww.packages.${pkgs.system}.swww
-    playerctl
-    vim
-    wget
-    webcord
-    spotify
-    pavucontrol
-    steam
-    git
-    tree
-    prismlauncher
-    clinfo
-    btop
-    mesa
-    ocaml
-    blender
-    heroic
-    thefuck
-    lmms
-    gimp
-    python3
-    nmap
-    vesktop
-    dolphin
-    godot_4
-    brightnessctl
-    cava
-    zoxide
-    killall
-    home-manager
-    nixd
-    libsForQt5.qt5.qtgraphicaleffects 
-
-    (callPackage ./sddm-theme-wimst.nix {})
-  ];
 
   stylix.enable = true;
   #stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
@@ -141,7 +71,6 @@
   stylix.image = ./home/src/wallpaper/evangelion_1.jpg;
 
 
-  programs.hyprland.xwayland.enable = true;
   programs.kdeconnect.enable = true;
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "Hack" "FiraMono" "FantasqueSansMono" "JetBrainsMono" ]; })
