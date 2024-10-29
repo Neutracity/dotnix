@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs = {
     zsh = {
       enable = true;
@@ -30,7 +32,7 @@
         gl = "git log";
       };
 
-      initExtra =''
+      initExtra = ''
         prompt_dir() {
         prompt_segment blue $CURRENT_FG '%1~'
         }

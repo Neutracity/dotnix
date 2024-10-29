@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home.packages = with pkgs; [
     hyprpicker
     hyprcursor
@@ -28,7 +30,6 @@
     meson
     swaylock-effects
   ];
-
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -103,76 +104,69 @@
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
         "MOZ_ENABLE_WAYLAND,1"
         "GDK_SCALE,1"
-
-
       ];
 
+      bind = [
+        "$mod, F, exec, firefox"
+        "$mod, Q, exec, kitty"
+        "$mod, W, togglefloating"
+        "$mod, C, killactive"
+        "$mod, R, exec, $menu"
 
-      bind =
-        [
-          "$mod, F, exec, firefox"
-          "$mod, Q, exec, kitty"
-          "$mod, W, togglefloating"
-          "$mod, C, killactive"
-          "$mod, R, exec, $menu"
+        # My customs keybinds
 
-          # My customs keybinds
+        "$mod SHIFT, S, exec, hyprshot -m region -s"
+        "$mod SHIFT, M, exec, pkill waybar || waybar "
 
-          "$mod SHIFT, S, exec, hyprshot -m region -s"
-          "$mod SHIFT, M, exec, pkill waybar || waybar "
+        "$mod SHIFT, L, exec, swaylock"
 
-          "$mod SHIFT, L, exec, swaylock"
+        #windows management
 
+        # Move focus with mainMod + arrow keys
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
 
+        # Switch workspaces with mainMod + [0-9]"
+        "$mod, 1, workspace, 1"
+        "$mod, 2, workspace, 2"
+        "$mod, 3, workspace, 3"
+        "$mod, 4, workspace, 4"
+        "$mod, 5, workspace, 5"
+        "$mod, 6, workspace, 6"
+        "$mod, 7, workspace, 7"
+        "$mod, 8, workspace, 8"
+        "$mod, 9, workspace, 9"
+        "$mod, 0, workspace, 10"
 
-          #windows management
+        # Move active window to a workspace with mainMod + SHIFT + [0-9]
+        "$mod SHIFT, 1, movetoworkspace, 1"
+        "$mod SHIFT, 2, movetoworkspace, 2"
+        "$mod SHIFT, 3, movetoworkspace, 3"
+        "$mod SHIFT, 4, movetoworkspace, 4"
+        "$mod SHIFT, 5, movetoworkspace, 5"
+        "$mod SHIFT, 6, movetoworkspace, 6"
+        "$mod SHIFT, 7, movetoworkspace, 7"
+        "$mod SHIFT, 8, movetoworkspace, 8"
+        "$mod SHIFT, 9, movetoworkspace, 9"
+        "$mod SHIFT, 0, movetoworkspace, 10"
 
-          # Move focus with mainMod + arrow keys
-          "$mod, left, movefocus, l"
-          "$mod, right, movefocus, r"
-          "$mod, up, movefocus, u"
-          "$mod, down, movefocus, d"
+        # Example special workspace (scratchpad)
+        "$mod, g, togglespecialworkspace, magic"
+        "$mod SHIFT, g, movetoworkspace, special:magic"
 
-          # Switch workspaces with mainMod + [0-9]"
-          "$mod, 1, workspace, 1"
-          "$mod, 2, workspace, 2"
-          "$mod, 3, workspace, 3"
-          "$mod, 4, workspace, 4"
-          "$mod, 5, workspace, 5"
-          "$mod, 6, workspace, 6"
-          "$mod, 7, workspace, 7"
-          "$mod, 8, workspace, 8"
-          "$mod, 9, workspace, 9"
-          "$mod, 0, workspace, 10"
+        # Scroll through existing workspaces with mainMod + scroll
+        "$mod, mouse_down, workspace, e+1"
+        "$mod, mouse_up, workspace, e-1"
 
-          # Move active window to a workspace with mainMod + SHIFT + [0-9]
-          "$mod SHIFT, 1, movetoworkspace, 1"
-          "$mod SHIFT, 2, movetoworkspace, 2"
-          "$mod SHIFT, 3, movetoworkspace, 3"
-          "$mod SHIFT, 4, movetoworkspace, 4"
-          "$mod SHIFT, 5, movetoworkspace, 5"
-          "$mod SHIFT, 6, movetoworkspace, 6"
-          "$mod SHIFT, 7, movetoworkspace, 7"
-          "$mod SHIFT, 8, movetoworkspace, 8"
-          "$mod SHIFT, 9, movetoworkspace, 9"
-          "$mod SHIFT, 0, movetoworkspace, 10"
+        "$mod+Ctrl, Right, workspace, r+1"
+        "$mod+Ctrl, Left, workspace, r-1"
 
-          # Example special workspace (scratchpad)
-          "$mod, g, togglespecialworkspace, magic"
-          "$mod SHIFT, g, movetoworkspace, special:magic"
+        "Alt, Tab, movefocus, d"
 
-          # Scroll through existing workspaces with mainMod + scroll
-          "$mod, mouse_down, workspace, e+1"
-          "$mod, mouse_up, workspace, e-1"
-
-          "$mod+Ctrl, Right, workspace, r+1"
-          "$mod+Ctrl, Left, workspace, r-1"
-
-          "Alt, Tab, movefocus, d"
-
-          "$mod, J, togglesplit"
-
-        ];
+        "$mod, J, togglesplit"
+      ];
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
@@ -202,6 +196,5 @@
       ];
     };
   };
-  systemd.user.targets.hyprland-session.Unit.Wants =
-    [ "xdg-desktop-autostart.target" ];
+  systemd.user.targets.hyprland-session.Unit.Wants = ["xdg-desktop-autostart.target"];
 }

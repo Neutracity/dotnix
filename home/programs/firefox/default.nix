@@ -1,7 +1,8 @@
-{ pkgs
-, inputs
-, lib
-, ...
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
 }: {
   programs.firefox = {
     enable = true;
@@ -45,7 +46,7 @@
           sponsorblock
           i-dont-care-about-cookies
           adaptive-tab-bar-colour
-          (youtube-recommended-videos.overrideAttrs (o: { meta = o.meta // { license = lib.licenses.mit; }; }))
+          (youtube-recommended-videos.overrideAttrs (o: {meta = o.meta // {license = lib.licenses.mit;};}))
           darkreader
         ];
 
@@ -122,12 +123,9 @@
           ];
         };
 
-        userChrome = (builtins.readFile ./userChrome.css);
-        userContent = (builtins.readFile ./userContent.css);
-
+        userChrome = builtins.readFile ./userChrome.css;
+        userContent = builtins.readFile ./userContent.css;
       };
-
     };
-
   };
 }

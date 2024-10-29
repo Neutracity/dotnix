@@ -1,6 +1,11 @@
-{ inputs, stylix, hyprland, config, pkgs, ... }:
-
 {
+  inputs,
+  stylix,
+  hyprland,
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./programs
     ./src/script
@@ -12,17 +17,15 @@
 
   home.stateVersion = "24.05";
 
-  home.packages = (with pkgs; [
-  ]);
+  home.packages = with pkgs; [
+  ];
 
-  home.file = { };
+  home.file = {};
 
   home.sessionVariables = {
     EDITOR = "nvim";
   };
 
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
-

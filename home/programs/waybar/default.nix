@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs = {
     waybar = {
       enable = true;
@@ -21,7 +23,7 @@
             "custom/cava-internal"
             "hyprland/workspaces"
           ];
-          modules-center = [ "hyprland/window" ];
+          modules-center = ["hyprland/window"];
           modules-right = [
             "network"
             "pulseaudio"
@@ -63,7 +65,7 @@
             "format" = "{icon}";
             "format-muted" = "󰖁 Muted";
             "format-icons" = {
-              "default" = [ "" "" "" ];
+              "default" = ["" "" ""];
             };
             "on-click" = "pamixer -t";
             "tooltip" = false;
@@ -75,7 +77,6 @@
             "format" = "{:%H:%M} ";
             "max-length" = 25;
             "tooltip-format" = "{:%A, %B %d, %Y (%R)} ";
-
           };
           "memory" = {
             "interval" = 1;
@@ -132,7 +133,7 @@
             "device" = "intel_backlight";
             "rotate" = 0;
             "format" = "{icon}";
-            "format-icons" = [ "" "" "" "" "" "" "" "" "" ];
+            "format-icons" = ["" "" "" "" "" "" "" "" ""];
             "on-scroll-down" = "brightnessctl set 1%-";
             "on-scroll-up" = "brightnessctl set 1%+";
             "reverse-scrolling" = true;
@@ -156,10 +157,10 @@
             "format-full" = "{icon} {capacity}%";
             "format-charging" = " {capacity}%";
             "format-plugged" = " {capacity}%";
-            "format-icons" = [ "" "" "" "" "" ];
+            "format-icons" = ["" "" "" "" ""];
           };
         };
-      };
+      };  
       style = ''
         * {
                    font-family: "JetBrainsMono Nerd Font";
