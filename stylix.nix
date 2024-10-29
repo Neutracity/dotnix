@@ -2,9 +2,9 @@
 {
   stylix= {
     enable = true;
-    #stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
     polarity = "dark";
-    image = ./home/src/wallpaper/evangelion_2.jpg;
+    image = ./home/src/wallpaper/kanagawa_1.jpg;
     fonts = {
       serif = {
         package = pkgs.nerdfonts.override { fonts = [ "Hack" ]; };

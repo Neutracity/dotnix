@@ -56,7 +56,7 @@
         #inactive_opacity = 0.95 ;
         blur = {
           enabled = true;
-          size = 3;
+          size = 10;
           vibrancy = 0.1696;
         };
       };
