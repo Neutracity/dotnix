@@ -15,6 +15,8 @@
     prismlauncher
     clinfo
     btop
+    gnome-bluetooth
+    pavucontrol
     mesa
     ocaml
     blender
