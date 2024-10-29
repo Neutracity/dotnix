@@ -80,31 +80,27 @@
       lualine-nvim
       nvim-web-devicons
 
-      {
-        plugin = nvim-treesitter.withPlugins (p: [
-          p.tree-sitter-nix
-          p.tree-sitter-vim
-          p.tree-sitter-bash
-          p.tree-sitter-lua
-          p.tree-sitter-python
-          p.tree-sitter-json
-        ]);
-        config = toLuaFile ./nvim/plugin/treesitter.lua;
-      }
+      #{
+      #  plugin = nvim-treesitter.withPlugins (p: [
+      #    p.tree-sitter-nix
+      #    p.tree-sitter-vim
+      #    p.tree-sitter-bash
+      #    p.tree-sitter-lua
+      #    p.tree-sitter-python
+      #    p.tree-sitter-json
+      #  ]);
+      #  config = toLuaFile ./nvim/plugin/treesitter.lua;
+      #}
 
       vim-nix
-      # {
-      #   plugin = vimPlugins.own-onedark-nvim;
-      #   config = "colorscheme onedark";
-      # }
     ];
 
+      #${builtins.readFile ./nvim/plugin/treesitter.lua}
     extraLuaConfig = ''
       ${builtins.readFile ./nvim/options.lua}
       ${builtins.readFile ./nvim/plugin/lsp.lua}
       ${builtins.readFile ./nvim/plugin/cmp.lua}
       ${builtins.readFile ./nvim/plugin/telescope.lua}
-      ${builtins.readFile ./nvim/plugin/treesitter.lua}
       ${builtins.readFile ./nvim/plugin/other.lua}
     '';
   };
