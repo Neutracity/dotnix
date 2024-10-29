@@ -21,4 +21,8 @@
     variant = "";
   };
   console.keyMap = "us";
+
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.config.common.default = "gtk";
+  
 }

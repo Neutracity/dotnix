@@ -37,4 +37,9 @@
 
     (callPackage ./sddm-theme-wimst.nix {})
   ];
+  programs.kdeconnect.enable = true;
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "Hack" "FiraMono" "FantasqueSansMono" "JetBrainsMono" ]; })
+  ];
+
 }
