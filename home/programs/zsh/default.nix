@@ -47,7 +47,6 @@
         theme = "agnoster";
         plugins = [
           "git"
-          "ssh-agent"
           "aliases"
           "ssh"
           "kitty"
