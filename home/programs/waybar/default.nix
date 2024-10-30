@@ -17,7 +17,7 @@
           output = [
             "eDP-1"
           ];
-          modules-left = [
+         modules-left = [
             "custom/launcher"
             "custom/cava-internal"
             "hyprland/workspaces"
@@ -146,11 +146,14 @@
         };
       };  
       style = ''
+        *{
 
+        }
         #custom-cava-internal{
           font-family: "Hack Nerd Font" ;
           color: #33ccff;
         }
+
       '';
     };
   };

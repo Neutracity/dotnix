@@ -39,9 +39,20 @@
 
     (callPackage ./sddm-theme-wimst.nix {})
   ];
-  programs.kdeconnect.enable = true;
+
+  #FONTS
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "Hack" "FiraMono" "FantasqueSansMono" "JetBrainsMono" ]; })
   ];
+
+  #MODULES
+  programs.kdeconnect.enable = true;
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/neutra/.dotfiles/";
+  };
+
 
 }

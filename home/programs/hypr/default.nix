@@ -88,7 +88,7 @@
 
       exec-once = [
         "waybar"
-        "swww-daemon --format xrgb"
+        #"swww-daemon --format xrgb"
       ];
 
       env = [
