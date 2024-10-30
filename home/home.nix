@@ -10,6 +10,7 @@
     ./programs
     ./src/script
     ../stylix.nix
+    inputs.spicetify-nix.homeManagerModules.default
   ];
 
   home.username = "neutra";
@@ -25,7 +26,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
-
+  nixpkgs.config.allowUnfree = true ;
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
