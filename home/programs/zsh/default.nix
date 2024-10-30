@@ -3,6 +3,7 @@
   pkgs,
   ...
 }: {
+  #environment.systemPackages = with pkgs; [ zsh-powerlevel10k ];
   programs = {
     zsh = {
       enable = true;
@@ -30,8 +31,9 @@
         gt = "git tag -ma";
         gs = "git status";
         gl = "git log";
+        cd = "z";
       };
-
+      
       initExtra = ''
         prompt_dir() {
         prompt_segment blue $CURRENT_FG '%1~'
@@ -45,8 +47,12 @@
         theme = "agnoster";
         plugins = [
           "git"
+          "ssh-agent"
+          "aliases"
+          "ssh"
           "kitty"
           "zoxide"
+          "fzf"
           "sudo"
           "thefuck"
         ];

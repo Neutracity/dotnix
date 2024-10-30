@@ -23,7 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
@@ -44,7 +44,6 @@
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs swww anyrun; };
         modules = [ ./configuration.nix inputs.stylix.nixosModules.stylix ];
-        #environment.systemPackages = [ anyrun.packages.${system}.anyrun ];
       };
       formatter.${system} = pkgs.nixpkgs-fmt;
       # Home manager declaration

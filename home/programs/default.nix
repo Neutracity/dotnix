@@ -11,5 +11,6 @@
     ./fastfetch
     ./anyrun
     ./cava
+    ./spicetify
   ];
 }
