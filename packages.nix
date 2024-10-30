@@ -19,6 +19,7 @@
     pavucontrol
     mesa
     ocaml
+    fzf
     blender
     heroic
     thefuck

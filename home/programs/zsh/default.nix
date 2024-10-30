@@ -37,6 +37,9 @@
         prompt_segment blue $CURRENT_FG '%1~'
         }
       '';
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
       oh-my-zsh = {
         enable = true;
         theme = "agnoster";
@@ -49,9 +52,6 @@
         ];
       };
 
-      enableCompletion = true;
-      autosuggestion.enable = true;
-      syntaxHighlighting.enable = true;
     };
   };
 }
