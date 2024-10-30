@@ -7,7 +7,6 @@
     ./programs
     ./src/script
     ../stylix.nix
-    inputs.spicetify-nix.homeManagerModules.default
   ];
 
   home.username = "neutra";
