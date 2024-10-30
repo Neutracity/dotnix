@@ -99,6 +99,7 @@
       extraLuaConfig = ''
       ${builtins.readFile ./nvim/plugin/nvim-tree.lua}  
       ${builtins.readFile ./nvim/options.lua}
+      ${builtins.readFile ./nvim/mappings.lua}
       ${builtins.readFile ./nvim/plugin/lsp.lua}
       ${builtins.readFile ./nvim/plugin/cmp.lua}
       ${builtins.readFile ./nvim/plugin/telescope.lua}
