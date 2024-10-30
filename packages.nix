@@ -6,8 +6,6 @@
     playerctl
     vim
     wget
-    webcord
-    spotify
     pavucontrol
     steam
     git

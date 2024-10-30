@@ -5,7 +5,10 @@
   lib,
   spicetify-nix,
   ...
-}: {
+}: 
+   let
+     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+   in{
 
   nixpkgs.config.allowUnfreePredicate = pkg:
         builtins.elem (lib.getName pkg) [
@@ -13,11 +16,5 @@
    ];
   imports = [spicetify-nix.homeManagerModules.default];
 
-  programs.spicetify =
-   let
-     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-   in
-   {
-     enable = true;
-   };
-}
+ }
+
