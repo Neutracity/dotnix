@@ -1,12 +1,13 @@
 { config, pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
+    (inputs.godot-bin.packages.x86_64-linux.godot-mono.override { dotnetPackage = pkgs.dotnet-sdk_7;})
     inputs.swww.packages.${pkgs.system}.swww
-    inputs.godot-bin.packages.x86_64-linux.godot-mono
     zsh-powerlevel10k
     playerctl
     vim
     wget
+    unzip
     pavucontrol
     steam
     git
