@@ -2,6 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     inputs.swww.packages.${pkgs.system}.swww
+    inputs.godot-bin.packages.x86_64-linux.godot-mono
     zsh-powerlevel10k
     playerctl
     vim

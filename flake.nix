@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    godot-bin = {
+      url = "github:Damianu/godot4-bin";
+      inputs.nixpkgs.follows = "nixpkgs"; #Might prevent some OpenGL issues
+    };
+
     swww.url = "github:LGFae/swww";
 
     stylix.url = "github:danth/stylix";

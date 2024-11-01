@@ -1,5 +1,5 @@
 local function map(mode, keys, command)
-  api.nvim_set_keymap(mode, keys, command, { noremap = true, silent = true })
+  vim.api.nvim_set_keymap(mode, keys, command, { noremap = true, silent = true })
 end
 
 local active = false
@@ -53,7 +53,7 @@ map("n", "<leader><space>", ":Telescope<CR>")
 map("n", "ff", ":Telescope find_files<CR>")
 
 -- NvimTree
-map("n", "<C-N>", ":NvimTreeToggle<CR>")
+map("n", "<leader>e", ":NvimTreeToggle<CR>")
 map("n", "<C-B>", ":NvimTreeFocus<CR>")
 
 -- Comment

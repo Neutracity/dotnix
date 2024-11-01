@@ -41,6 +41,7 @@
 
       monitor = [
         "eDP-1, 1920x1080@60.04Hz, auto, 1.25"
+        "HDMI-A-1, 1920x1080@60.00Hz, -1920x0, 1"
       ];
 
       general = {
