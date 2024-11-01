@@ -28,7 +28,6 @@
     nmap
     vesktop
     dolphin
-    godot_4
     brightnessctl
     cava
     zoxide
