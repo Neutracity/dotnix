@@ -13,6 +13,7 @@
     git
     tree
     prismlauncher
+    audacity
     clinfo
     btop
     gnome-bluetooth
