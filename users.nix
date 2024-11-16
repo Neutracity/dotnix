@@ -1,8 +1,10 @@
 { config, pkgs, inputs, ... }:
-{
-  users.users.neutra = {
+let 
+username = config.var.username;
+in {
+  users.users.${username} = {
     isNormalUser = true;
-    description = config.var.username;
+    description = "${username} user";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate

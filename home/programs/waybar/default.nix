@@ -2,7 +2,13 @@
   config,
   pkgs,
   ...
-}: {
+}:
+let
+  border-size = config.var.theme.border-size;
+  gaps-in = config.var.theme.gaps-in;
+  gaps-out = config.var.theme.gaps-out;
+  rounding = config.var.theme.rounding;
+in{
   programs = {
     waybar = {
       enable = true;
@@ -12,8 +18,8 @@
           position = "top";
           height = 38 ;
           margin-top = 8;
-          margin-left = 5;
-          margin-right = 5;
+          margin-left = gaps-out;
+          margin-right = gaps-out;
           output = [
             "eDP-1"
           ];
@@ -151,8 +157,8 @@
       };  
       style = ''
         *{
-          border-radius: 8px;
-          border : none;
+          border-radius: ${toString rounding};
+          border : ${toString border-size};
         }
         #custom-cava-internal{
           font-family: "Hack Nerd Font" ;

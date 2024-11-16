@@ -41,7 +41,6 @@ in {
       name = "Kora";
     };
 
-    font = { name = config.stylix.fonts.serif.name; };
 
     gtk3.extraConfig = { gtk-application-prefer-dark-theme = 1; };
 
