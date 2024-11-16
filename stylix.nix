@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{  pkgs, ... }:
 {
   stylix= {
     enable = true;
@@ -9,6 +9,9 @@
       serif = {
         package = pkgs.nerdfonts.override { fonts = [ "Hack" ]; };
         name = "Hack";
+      };
+      sizes = {
+        popups = 12 ;
       };
     };
     opacity.terminal = 0.85;

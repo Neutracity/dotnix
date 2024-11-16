@@ -37,8 +37,8 @@
 
           "custom/launcher" = {
             "format" = " ";
-            "on-click" = "pkill rofi || rofi2";
-            "on-click-middle" = "exec default_wall";
+            "on-click" = "exec menu";
+            "on-click-middle" = "exec powermenu";
             "on-click-right" = "exec wallpaper_random";
             "tooltip" = false;
           };
@@ -46,6 +46,7 @@
           "custom/cava-internal" = {
             "exec" = "sleep 1s && cava-internal";
             "tooltip" = false;
+            "on-click" = "kitty -e 'cava'";
           };
 
           "pulseaudio" = {

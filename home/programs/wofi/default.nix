@@ -5,10 +5,10 @@ let
   background = "#${config.lib.stylix.colors.base00}";
   background-alt = "#${config.lib.stylix.colors.base01}";
   foreground = "#${config.lib.stylix.colors.base05}";
-  font = config.stylix.fonts.serif.name;
+  font = config.stylix.fonts.serif.name ;
   #rounding = config.var.theme.rounding;
   rounding = 8;
-  font-size = config.stylix.fonts.sizes.popups;
+  font-size = config.stylix.fonts.sizes.popups ;
 in {
 
   home.packages = with pkgs; [ wofi-emoji ];
@@ -23,7 +23,7 @@ in {
       prompt = "Apps";
       normal_window = true;
       layer = "top";
-      term = "foot";
+      term = "kitty";
       height = "305px";
       orientation = "vertical";
       halign = "fill";

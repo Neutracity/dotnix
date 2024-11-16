@@ -6,7 +6,6 @@
   home.packages = with pkgs; [
     hyprpicker
     hyprcursor
-    hyprlock
     hypridle
     mpv
     imv
@@ -37,7 +36,7 @@
       "$mod" = "SUPER";
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
-      "$menu" = "wofi";
+      "$menu" = "menu";
 
       monitor = [
         "eDP-1, 1920x1080@60.04Hz, auto, 1.25"
@@ -52,7 +51,7 @@
       };
 
       decoration = {
-        rounding = 5;
+        rounding = 8;
         #active_opacity = 1.0;
         #inactive_opacity = 0.95 ;
         blur = {
