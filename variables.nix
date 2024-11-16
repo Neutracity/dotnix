@@ -4,6 +4,9 @@
     hostname = "neunix";
     username = "neutra";
     configDirectory = "/home/" + config.var.username + "/.dotfiles/";
+    
+    keyboardLayout = "us";
+
     theme = {
       rounding = 15;
       gaps-in = 5;

@@ -2,7 +2,17 @@
   config,
   pkgs,
   ...
-}: {
+}:
+let
+  border-size = config.var.theme.border-size;
+  gaps-in = config.var.theme.gaps-in;
+  gaps-out = config.var.theme.gaps-out;
+  active-opacity = config.var.theme.active-opacity;
+  inactive-opacity = config.var.theme.inactive-opacity;
+  rounding = config.var.theme.rounding;
+  blur = config.var.theme.blur;
+  keyboardLayout = config.var.keyboardLayout;
+in {
   home.packages = with pkgs; [
     hyprpicker
     hyprcursor
@@ -37,32 +47,32 @@
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "menu";
-
+    
       monitor = [
         "eDP-1, 1920x1080@60.04Hz, auto, 1.25"
         "HDMI-A-1, 1920x1080@60.00Hz, -1920x0, 1"
       ];
 
       general = {
-        gaps_in = 4;
-        gaps_out = 14;
-        border_size = 1;
+        gaps_in = gaps-in;
+        gaps_out = gaps-out;
+        border_size = border-size;
         resize_on_border = true;
       };
 
       decoration = {
-        rounding = 8;
+        rounding = rounding;
         #active_opacity = 1.0;
         #inactive_opacity = 0.95 ;
         blur = {
-          enabled = true;
+          enabled = blur;
           size = 10;
           vibrancy = 0.1696;
         };
       };
 
       input = {
-        kb_layout = "us";
+        kb_layout = keyboardLayout;
         follow_mouse = 1;
         touchpad.natural_scroll = "yes";
         numlock_by_default = true;
