@@ -1,5 +1,6 @@
 { config , ...}:
 {
+  imports = [ ./config-var.nix ];
   config.var = {
     hostname = "neunix";
     username = "neutra";

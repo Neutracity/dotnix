@@ -40,6 +40,7 @@
     mpd
     home-manager
     nixd
+    nil
     libsForQt5.qt5.qtgraphicaleffects 
 
     (callPackage ./sddm-theme-wimst.nix {})
@@ -60,11 +61,6 @@
   };
   
 
-  services.udiskie = {
-    enable = true;
-    notify = true;
-    automount = true;
-  };
 
 
 }

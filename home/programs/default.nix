@@ -15,5 +15,6 @@
     ./anyrun
     ./cava
     ./spicetify
+    ./gtk
   ];
 }
