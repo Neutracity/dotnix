@@ -8,6 +8,7 @@
     ./nvim
     ./rofi
     #./eza
+    ./hyprlock
     ./firefox
     ./fastfetch
     ./anyrun

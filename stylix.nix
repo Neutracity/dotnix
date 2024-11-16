@@ -2,9 +2,9 @@
 {
   stylix= {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     polarity = "dark";
-    image = ./home/src/wallpaper/kanagawa_1.jpg;
+    image = ./home/src/wallpaper/mocha1.png;
     fonts = {
       serif = {
         package = pkgs.nerdfonts.override { fonts = [ "Hack" ]; };
