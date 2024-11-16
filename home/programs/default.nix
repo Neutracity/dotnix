@@ -6,7 +6,7 @@
     ./hypr
     ./dunst
     ./nvim
-    ./rofi
+    ./wofi
     #./eza
     ./hyprlock
     ./firefox
