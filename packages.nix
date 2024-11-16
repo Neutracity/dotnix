@@ -37,6 +37,7 @@
     cava
     zoxide
     killall
+    mpd
     home-manager
     nixd
     libsForQt5.qt5.qtgraphicaleffects 
@@ -57,6 +58,7 @@
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/neutra/.dotfiles/";
   };
+  
 
 
 }

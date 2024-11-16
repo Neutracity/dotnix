@@ -49,8 +49,8 @@
           };
 
           "pulseaudio" = {
-            "scroll-step" = 1;
-            "format" = "{icon} {format_source}";
+            "scroll-step" = 2;
+            "format" = "{icon}";
             "format-muted" = "󰖁";
             "format-bluetooth" = "{icon}  {format_source}";
             "format-bluetooth-muted" = "󰖁 ";
@@ -129,7 +129,8 @@
             "hwmon-path" = "/sys/devices/pci0000:00/0000:00:08.1/0000:04:00.0/hwmon/hwmon0/temp1_input";
             "critical-threshold" = 70;
             "format-critical" = "";
-            "format" = "";
+            "format" = "{icon}";
+            "format-icons" = ["" "" "" "" "" "" "" ""];
           };
 
           "battery" = {
@@ -149,7 +150,7 @@
       };  
       style = ''
         *{
-          border-radius: 20px;
+          border-radius: 8px;
           border : none;
         }
         #custom-cava-internal{
@@ -203,6 +204,10 @@
             color: #${config.lib.stylix.colors.base09};
         }
         #temperature.critical {
+            color: #${config.lib.stylix.colors.base09};
+        }
+
+        #pulseaudio.muted {
             color: #${config.lib.stylix.colors.base09};
         }
 

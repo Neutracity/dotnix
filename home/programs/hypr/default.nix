@@ -24,6 +24,7 @@
     gnome-themes-extra
     libva
     dconf
+    nemo
     wayland-utils
     wayland-protocols
     direnv
@@ -89,6 +90,9 @@
 
       exec-once = [
         "waybar"
+        "hypridle"
+        "dunst -conf .config/dunst/dunstrc"
+        "hyprpaper"
       ];
 
       env = [

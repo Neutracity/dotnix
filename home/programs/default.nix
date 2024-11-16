@@ -4,8 +4,9 @@
     ./waybar
     ./zsh
     ./hypr
-    #./dunst
+    ./dunst
     ./nvim
+    ./rofi
     #./eza
     ./firefox
     ./fastfetch
