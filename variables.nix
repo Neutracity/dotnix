@@ -3,8 +3,7 @@
   config.var = {
     hostname = "neunix";
     username = "neutra";
-    configDirectory = "/home/" + config.var.username + "/.dotfiles/";
-    
+    ronfigDirectory = "/home/" + config.var.username + "/.dotfiles/";
     keyboardLayout = "us";
 
     theme = {

@@ -19,6 +19,7 @@
       ./sddm.nix
       ./devices.nix
       ./variables.nix
+      ./config-var.nix
     ];
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "24.05";
