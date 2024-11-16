@@ -49,10 +49,6 @@
       }
 
       {
-        plugin = gruvbox-nvim;
-        config = "colorscheme gruvbox";
-      }
-      {
         plugin = nvim-tree-lua;
         config = toLua "require(\"nvim-tree\").setup()";
       }
@@ -70,27 +66,32 @@
       }
 
       telescope-fzf-native-nvim
-
+      nvim-cmp
       cmp_luasnip
-      cmp-nvim-lsp
 
       luasnip
       friendly-snippets
 
       lualine-nvim
       nvim-web-devicons
-
-      #{
-      #  plugin = nvim-treesitter.withPlugins (p: [
-      #    p.tree-sitter-nix
-      #    p.tree-sitter-vim
-      #    p.tree-sitter-bash
-      #    p.tree-sitter-lua
-      #    p.tree-sitter-python
-      #    p.tree-sitter-json
-      #  ]);
-      #  config = toLuaFile ./nvim/plugin/treesitter.lua;
-      #}
+      cmp-nvim-lsp # LSP as completion source | https://github.com/hrsh7th/cmp-nvim-lsp/
+      cmp-nvim-lsp-signature-help # https://github.com/hrsh7th/cmp-nvim-lsp-signature-help/
+      cmp-buffer # current buffer as completion source | https://github.com/hrsh7th/cmp-buffer/
+      cmp-path # file paths as completion source | https://github.com/hrsh7th/cmp-path/
+      cmp-nvim-lua # neovim lua API as completion source | https://github.com/hrsh7th/cmp-nvim-lua/
+      cmp-cmdline # cmp command line suggestions
+      cmp-cmdline-history # cmp command line history suggestions
+      {
+        plugin = nvim-treesitter.withPlugins (p: [
+          p.tree-sitter-nix
+          p.tree-sitter-vim
+          p.tree-sitter-bash
+          p.tree-sitter-lua
+          p.tree-sitter-python
+          p.tree-sitter-json
+        ]);
+        config = toLuaFile ./nvim/plugin/treesitter.lua;
+      }
 
       vim-nix
     ];
