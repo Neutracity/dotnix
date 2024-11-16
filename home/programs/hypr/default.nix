@@ -8,7 +8,6 @@
     hyprcursor
     hyprlock
     hypridle
-    hyprpaper
     mpv
     imv
     qt5.qtwayland
@@ -38,7 +37,7 @@
       "$mod" = "SUPER";
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
-      "$menu" = "anyrun";
+      "$menu" = "wofi";
 
       monitor = [
         "eDP-1, 1920x1080@60.04Hz, auto, 1.25"

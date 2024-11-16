@@ -7,6 +7,7 @@
     ./dunst
     ./nvim
     ./wofi
+    ./batsignal
     #./eza
     ./hyprlock
     ./firefox
