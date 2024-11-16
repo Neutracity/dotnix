@@ -1,11 +1,13 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
     (inputs.godot-bin.packages.x86_64-linux.godot-mono.override { dotnetPackage = pkgs.dotnet-sdk_7;})
-    inputs.swww.packages.${pkgs.system}.swww
     zsh-powerlevel10k
     playerctl
+    bluetui
     vim
+    moonlight-qt
+    remmina
     wget
     unzip
     pavucontrol

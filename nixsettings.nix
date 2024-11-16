@@ -12,7 +12,7 @@
       "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
     ];
   };
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = { allowBroken = true; allowUnfree = true; };
   nix.settings.auto-optimise-store = true;
   nix.optimise.automatic = true;
   nix.gc = {

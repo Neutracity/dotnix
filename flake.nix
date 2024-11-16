@@ -14,8 +14,6 @@
       inputs.nixpkgs.follows = "nixpkgs"; #Might prevent some OpenGL issues
     };
 
-    swww.url = "github:LGFae/swww";
-
     stylix.url = "github:danth/stylix";
 
     anyrun = {
@@ -39,7 +37,7 @@
 
   };
 
-  outputs = { self, nixpkgs, swww, home-manager, spicetify-nix, stylix, anyrun, ... }@inputs:
+  outputs = { self, nixpkgs,  home-manager, spicetify-nix, stylix, anyrun, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -47,7 +45,7 @@
     {
       # Nixos declaration
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs swww anyrun; };
+        specialArgs = { inherit inputs anyrun; };
         modules = [ ./configuration.nix inputs.stylix.nixosModules.stylix ];
       };
       formatter.${system} = pkgs.nixpkgs-fmt;
