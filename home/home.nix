@@ -1,5 +1,6 @@
 {
   inputs,
+  config,
   pkgs,
   ...
 }: {
@@ -7,10 +8,11 @@
     ./programs
     ./src/script
     ../stylix.nix
+    ../config-var.nix
+    ../variables.nix
   ];
-
-  home.username = "neutra";
-  home.homeDirectory = "/home/neutra";
+  inherit (config.var) username;
+  home.homeDirectory = "/home/"+config.var.username;
 
   home.stateVersion = "24.05";
 
