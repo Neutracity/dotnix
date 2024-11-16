@@ -2,7 +2,7 @@
 {
   users.users.neutra = {
     isNormalUser = true;
-    description = "neutra";
+    description = config.var.username;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
