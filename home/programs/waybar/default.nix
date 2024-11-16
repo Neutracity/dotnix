@@ -10,10 +10,10 @@
         mainBar = {
           layer = "top";
           position = "top";
-          height = 42 ;
-          margin-top = 5;
-          margin-left = 8;
-          margin-right = 8;
+          height = 38 ;
+          margin-top = 8;
+          margin-left = 5;
+          margin-right = 5;
           output = [
             "eDP-1"
           ];
@@ -48,24 +48,22 @@
             "tooltip" = false;
           };
 
-          "hyprland/window" = {
-            "format" = " {} ";
-            "rewrite" = {
-              "(.*) — Mozilla Firefox" = " Firefox";
-              "(.*) - kitty" = "󰞷";
-            };
-            "separate-outputs" = true;
-            "max-length" = 25;
-          };
-
           "pulseaudio" = {
             "scroll-step" = 1;
-            "format" = "{icon}";
+            "format" = "{icon} {format_source}";
             "format-muted" = "󰖁";
+            "format-bluetooth" = "{icon}  {format_source}";
+            "format-bluetooth-muted" = "󰖁 ";
             "format-icons" = {
+              "headphone"= "";
+              "hands-free"= "";
+              "headset"= "";
+              "phone"= "";
+              "portable"= "";
+              "car"= "";
               "default" = ["" "" ""];
             };
-            "on-click" = "pamixer -t";
+            "on-click" = "pavucontrol";
             "tooltip" = false;
             "reverse-scrolling" = true;
           };
@@ -75,18 +73,21 @@
             "format" = "{:%H:%M} ";
             "max-length" = 25;
             "tooltip-format" = "{:%A, %B %d, %Y (%R)} ";
+            "on-click"= "gnome-calendar";
           };
           "memory" = {
             "interval" = 1;
-            "format" = "󰻠 {percentage}%";
+            "format" = "󰻠";
             "states" = {
               "warning" = 85;
             };
+            "on-click"= "kitty -e 'btop'";
           };
 
           "cpu" = {
             "interval" = 1;
-            "format" = "󰍛 {usage}%";
+            "format" = "󰍛";
+            "on-click"= "kitty -e 'btop'";
           };
 
           "network" = {
@@ -99,6 +100,7 @@
             "tooltip-format-wifi" = "{essid} ({signalStrength}%)  \n {ipaddr}";
             "tooltip-format-ethernet" = "{ifname} \n {ipaddr}";
             "tooltip-format-disconnected" = "Disconnected";
+            "on-click"= "kitty -e 'nmtui'";
           };
 
           "custom/powermenu" = {
@@ -125,9 +127,9 @@
           "temperature" = {
             "thermal-zone" = 2;
             "hwmon-path" = "/sys/devices/pci0000:00/0000:00:08.1/0000:04:00.0/hwmon/hwmon0/temp1_input";
-            "critical-threshold" = 80;
-            "format-critical" = " {temperatureC}°C";
-            "format" = " {temperatureC}°C";
+            "critical-threshold" = 70;
+            "format-critical" = "";
+            "format" = "";
           };
 
           "battery" = {
@@ -147,11 +149,61 @@
       };  
       style = ''
         *{
-
+          border-radius: 20px;
+          border : none;
         }
         #custom-cava-internal{
           font-family: "Hack Nerd Font" ;
-          color: #33ccff;
+        }
+
+        window#waybar {
+          background: rgba(0, 0, 0, 0);
+        }
+
+        #clock,
+        #battery,
+        #cpu,
+        #memory,
+        #temperature,
+        #network,
+        #pulseaudio,
+        #custom-media,
+        #tray,
+        #backlight,
+        #mode,
+        #custom-power,
+        #custom-menu,
+        #custom-cava-internal,
+        #custom-launcher,
+        #idle_inhibitor {
+            padding: 0 10px;
+        }
+        /*-----module groups----*/
+        .modules-right {
+            margin: 2px 10px 0 0;
+            background-color: #${config.lib.stylix.colors.base00};
+        }
+        .modules-center {
+            margin: 2px 0 0 0;
+           /*background-color: #${config.lib.stylix.colors.base00};*/
+        }
+        .modules-left {
+            margin: 2px 0 0 5px;
+            background-color: #${config.lib.stylix.colors.base00};
+        }
+        #workspaces button {
+            padding: 1px 4px;
+            background-color: transparent;
+        }
+
+        #battery.warning:not(.charging) {
+	      color: #${config.lib.stylix.colors.base0A};
+        }
+        #battery.critical:not(.charging) {
+            color: #${config.lib.stylix.colors.base09};
+        }
+        #temperature.critical {
+            color: #${config.lib.stylix.colors.base09};
         }
 
       '';

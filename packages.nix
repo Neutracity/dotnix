@@ -5,6 +5,7 @@
     zsh-powerlevel10k
     playerctl
     bluetui
+    gnome-calendar
     vim
     moonlight-qt
     remmina

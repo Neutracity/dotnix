@@ -1,6 +1,7 @@
 require('neodev').setup()
 require'lspconfig'.lua_ls.setup{}
 require("lspconfig").nixd.setup({
+  offset_encoding = "utf-8",
   cmd = { "nixd" },
   settings = {
     nixd = {
