@@ -7,6 +7,8 @@
     bluetui
     gnome-calendar
     vim
+    rar
+    unrar
     moonlight-qt
     remmina
     wget
