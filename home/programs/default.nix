@@ -9,6 +9,7 @@
     ./wofi
     ./batsignal
     #./eza
+    ./cura
     ./hyprlock
     ./firefox
     ./fastfetch

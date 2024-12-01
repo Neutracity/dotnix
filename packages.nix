@@ -4,6 +4,7 @@
     (inputs.godot-bin.packages.x86_64-linux.godot-mono.override { dotnetPackage = pkgs.dotnet-sdk_7;})
     zsh-powerlevel10k
     playerctl
+    osu-lazer
     bluetui
     gnome-calendar
     vim

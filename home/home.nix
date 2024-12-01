@@ -12,6 +12,7 @@
   ];
   home.username = config.var.username;
   home.homeDirectory = "/home/"+config.var.username;
+  
 
   home.stateVersion = "24.05";
 

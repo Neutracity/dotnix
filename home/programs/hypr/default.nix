@@ -38,6 +38,7 @@ in {
     direnv
     meson
     swaylock-effects
+    cliphist
   ];
 
   wayland.windowManager.hyprland = {
@@ -101,6 +102,7 @@ in {
         "hypridle"
         "dunst -conf .config/dunst/dunstrc"
         "hyprpaper"
+        "wl-paste --watch cliphist store"
       ];
 
       env = [
@@ -123,13 +125,14 @@ in {
         "$mod, Q, exec, kitty"
         "$mod, W, togglefloating"
         "$mod, C, killactive"
+        "Alt_L, F4, killactive"
         "$mod, R, exec, $menu"
 
         # My customs keybinds
 
         "$mod SHIFT, S, exec, hyprshot -m region -s -o /home/neutra/Pictures/screenshots"
         "$mod SHIFT, M, exec, pkill waybar || waybar "
-
+        "$mod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
         "$mod SHIFT, L, exec, swaylock"
 
         #windows management
