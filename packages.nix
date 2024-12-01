@@ -44,7 +44,8 @@
     home-manager
     nixd
     nil
-    libsForQt5.qt5.qtgraphicaleffects 
+    libsForQt5.qt5.qtgraphicaleffects
+    appimg-run
 
     (callPackage ./sddm-theme-wimst.nix {})
   ];

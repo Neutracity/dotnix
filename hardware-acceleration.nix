@@ -29,6 +29,7 @@
   hardware.graphics.extraPackages32 = with pkgs; [
     driversi686Linux.amdvlk
   ];
+  hardware.opengl.enable = true;
 
   environment.variables = {
     # VAAPI and VDPAU config for accelerated video.
