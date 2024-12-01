@@ -8,8 +8,8 @@
     ./nvim
     ./wofi
     ./batsignal
-    #./eza
-    ./cura
+    # ./eza
+    # ./cura
     ./hyprlock
     ./firefox
     ./fastfetch
