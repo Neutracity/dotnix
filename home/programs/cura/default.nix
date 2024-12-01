@@ -1,6 +1,7 @@
 {
   lib,
-  makeDesktopItem,
+makeDesktopItem,
+...
 }:
 {
 
