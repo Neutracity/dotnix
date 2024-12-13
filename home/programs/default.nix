@@ -8,6 +8,7 @@
     ./nvim
     ./wofi
     ./batsignal
+    ./tmux
     # ./eza
     # ./cura
     ./hyprlock
