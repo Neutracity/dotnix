@@ -32,7 +32,7 @@ in {
     gnome-themes-extra
     libva
     dconf
-    nemo
+    nemo-with-extensions
     wayland-utils
     wayland-protocols
     direnv
@@ -134,6 +134,7 @@ in {
         "$mod SHIFT, M, exec, pkill waybar || waybar "
         "$mod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
         "$mod SHIFT, L, exec, swaylock"
+        "$mod, BackSpace, exec, powermenu"
 
         #windows management
 
@@ -142,6 +143,11 @@ in {
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
+
+        "$mod, h, movefocus, l"
+        "$mod, l, movefocus, r"
+        "$mod, k, movefocus, u"
+        "$mod, j, movefocus, d"
 
         # Switch workspaces with mainMod + [0-9]"
         "$mod, 1, workspace, 1"
@@ -177,10 +183,12 @@ in {
 
         "$mod+Ctrl, Right, workspace, r+1"
         "$mod+Ctrl, Left, workspace, r-1"
+        "$mod+Ctrl, l, workspace, r+1"
+        "$mod+Ctrl, h, workspace, r-1"
 
         "Alt, Tab, movefocus, d"
 
-        "$mod, J, togglesplit"
+        #"$mod, J, togglesplit"
       ];
       bindm = [
         "$mod, mouse:272, movewindow"

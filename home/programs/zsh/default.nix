@@ -15,6 +15,7 @@
         lt = "${pkgs.eza}/bin/eza --tree --icons=auto --header --group-directories-first";
         lla = "${pkgs.eza}/bin/eza -la --icons=auto --header --group-directories-first";
         ezsh = "nvim /home/neutra/.dotfiles/home/programs/zsh/default.nix";
+        uzsh = "source /home/neutra/.zshrc";
         econfig = "nvim /home/neutra/.dotfiles/configuration.nix";
         eflake = "nvim /home/neutra/.dotfiles/flake.nix";
         nr = "sudo nixos-rebuild switch --flake /home/neutra/.dotfiles#default";
@@ -44,7 +45,7 @@
       syntaxHighlighting.enable = true;
       oh-my-zsh = {
         enable = true;
-        theme = "agnoster";
+        theme = "fino-time";
         plugins = [
           "git"
           "aliases"

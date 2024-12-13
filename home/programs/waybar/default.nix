@@ -18,8 +18,8 @@ in{
           position = "top";
           height = 38 ;
           margin-top = 8;
-          margin-left = gaps-out;
-          margin-right = gaps-out;
+          margin-left = 6;
+          margin-right = 0;
           output = [
             "eDP-1"
           ];

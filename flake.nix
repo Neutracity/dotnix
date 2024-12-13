@@ -8,7 +8,10 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    solaar = {
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";# For latest stable version
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     godot-bin = {
       url = "github:Damianu/godot4-bin";
       inputs.nixpkgs.follows = "nixpkgs"; #Might prevent some OpenGL issues
@@ -37,7 +40,7 @@
 
   };
 
-  outputs = { self, nixpkgs,  home-manager, spicetify-nix, stylix, anyrun, ... }@inputs:
+  outputs = { self, nixpkgs,  home-manager, spicetify-nix, stylix, anyrun, solaar, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -46,7 +49,7 @@
       # Nixos declaration
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs anyrun; };
-        modules = [ ./configuration.nix inputs.stylix.nixosModules.stylix ];
+        modules = [ ./configuration.nix inputs.stylix.nixosModules.stylix solaar.nixosModules.default ];
       };
       formatter.${system} = pkgs.nixpkgs-fmt;
       # Home manager declaration

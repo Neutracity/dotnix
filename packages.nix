@@ -45,7 +45,7 @@
     nixd
     nil
     libsForQt5.qt5.qtgraphicaleffects
-    appimg-run
+    appimage-run
 
     (callPackage ./sddm-theme-wimst.nix {})
   ];
@@ -57,14 +57,26 @@
 
   #MODULES
   programs.kdeconnect.enable = true;
-  programs.nh = {
+  # programs.nh = {
+  #   enable = true;
+  #   clean.enable = true;
+  #   clean.extraArgs = "--keep-since 4d --keep 3";
+  #   flake = "/home/neutra/.dotfiles/";
+  # };
+ services.solaar = {
+    enable = true; # Enable the service
+    package = pkgs.solaar; # The package to use
+    window = "hide"; # Show the window on startup (show, *hide*, only [window only])
+    batteryIcons = "regular"; # Which battery icons to use (*regular*, symbolic, solaar)
+    extraArgs = ""; # Extra arguments to pass to solaar on startup
+  }; 
+  services.printing.enable = true;
+  services.avahi = {
     enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/home/neutra/.dotfiles/";
+    nssmdns4 = true;
+    openFirewall = true;
+    
   };
-  
-
 
 
 }
