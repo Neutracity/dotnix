@@ -17,6 +17,11 @@
   home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
+
+    peaclock
+    cbonsai
+    pipes
+    cmatrix
   ];
 
   home.file = {};

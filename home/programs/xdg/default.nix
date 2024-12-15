@@ -47,25 +47,19 @@ let
   associations =
     (lib.genAttrs code (_: [ "nvim.desktop" ]))
     // (lib.genAttrs media (_: [ "mpv.desktop" ]))
-    // (lib.genAttrs images (_: [ "viewnior.desktop" ]))
-    // (lib.genAttrs browser (_: [
-      "${if defaults.browser == "thorium" then "thorium-browser" else defaults.browser}.desktop"
-    ]))
+    // (lib.genAttrs images (_: [ "mpv.desktop" ]))
+    // (lib.genAttrs browser (_: [ "firefox.desktop" ]))
     // {
-      "application/pdf" = [ "org.pwmt.zathura.desktop" ];
+      "application/pdf" = [ "firefox.desktop" ];
       "x-scheme-handler/spotify" = [ "spotify.desktop" ];
-      "x-scheme-handler/discord" = [ "Discord.desktop" ];
+      "x-scheme-handler/discord" = [ "vesktop.desktop" ];
       "inode/directory" = [
-        "${
-          if defaults.fileManager == "cosmic-files" then "com.system76.CosmicFiles" else defaults.fileManager
-        }.desktop"
+        "nemo.desktop"
       ];
     };
 
-  template = lib.template.xdg;
 in
 {
-  home.sessionVariables = mkForce template.sysEnv;
 
   xdg = {
     enable = true;
@@ -100,9 +94,5 @@ in
       defaultApplications = associations;
     };
 
-    configFile = {
-      "npm/npmrc" = template.npmrc;
-      "python/pythonrc" = template.pythonrc;
-    };
   };
 }

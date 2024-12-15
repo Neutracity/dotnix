@@ -37,7 +37,6 @@ in {
     wayland-protocols
     direnv
     meson
-    hyprpolkitagent
     swaylock-effects
     cliphist
   ];
@@ -131,7 +130,7 @@ in {
 
         # My customs keybinds
 
-        "$mod SHIFT, S, exec, hyprshot -m region -s -o /home/neutra/Pictures/screenshots"
+        "$mod SHIFT, S, exec, swappyfile=$(hyprshot -m region -- echo); swappy -f $swappyfile -o $swappyfile "
         "$mod SHIFT, M, exec, pkill waybar || waybar "
         "$mod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
         "$mod SHIFT, L, exec, hyprlock"

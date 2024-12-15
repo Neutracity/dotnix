@@ -19,5 +19,6 @@
     ./cava
     ./spicetify
     ./gtk
+    ./xdg
   ];
 }
