@@ -38,6 +38,7 @@
         se = "sudoedit";
         ff = "fastfetch";
         neofetch = "fastfetch";
+        nmtui = "better-nmtui";
         ga = "git add -A";
         gc = "git commit -m";
         gp = "git push";

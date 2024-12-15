@@ -107,7 +107,7 @@ in{
             "tooltip-format-wifi" = "{essid} ({signalStrength}%)  \n {ipaddr}";
             "tooltip-format-ethernet" = "{ifname} \n {ipaddr}";
             "tooltip-format-disconnected" = "Disconnected";
-            "on-click"= "kitty -e 'nmtui'";
+            "on-click"= "kitty -e 'better-nmtui'";
           };
 
           "custom/powermenu" = {
