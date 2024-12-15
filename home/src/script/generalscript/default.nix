@@ -26,7 +26,7 @@
 	button=white,black
 	actbuttom=white,black
 	checkbox=white,black
-' ${pkgs.nmtui}
+' nmtui
 
   '';
 in {
