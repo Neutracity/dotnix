@@ -15,6 +15,8 @@
       cursor_shape = "beam";
       enable_audio_bell = false;
       shell = "zsh";
+      background_padding_width = 10 ;
+      window_margin_width = 20;
     };
     shellIntegration.enableZshIntegration = true;
   };
