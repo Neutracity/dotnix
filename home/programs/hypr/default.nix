@@ -37,6 +37,7 @@ in {
     wayland-protocols
     direnv
     meson
+    hyprpolkitagent
     swaylock-effects
     cliphist
   ];
@@ -133,7 +134,7 @@ in {
         "$mod SHIFT, S, exec, hyprshot -m region -s -o /home/neutra/Pictures/screenshots"
         "$mod SHIFT, M, exec, pkill waybar || waybar "
         "$mod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
-        "$mod SHIFT, L, exec, swaylock"
+        "$mod SHIFT, L, exec, hyprlock"
         "$mod, BackSpace, exec, powermenu"
 
         #windows management

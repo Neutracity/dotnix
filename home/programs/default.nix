@@ -9,6 +9,7 @@
     ./wofi
     ./batsignal
     ./tmux
+    ./btop
     # ./eza
     # ./cura
     ./hyprlock
