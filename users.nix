@@ -5,7 +5,7 @@ in {
   users.users.${username} = {
     isNormalUser = true;
     description = "${username} user";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       kdePackages.kate
       thunderbird

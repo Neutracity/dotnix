@@ -44,9 +44,10 @@
     home-manager
     nixd
     nil
+    docker
     libsForQt5.qt5.qtgraphicaleffects
     appimage-run
-
+    (callPackage ./clife.nix {})
     (callPackage ./sddm-theme-wimst.nix {})
   ];
 
