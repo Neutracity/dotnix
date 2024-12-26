@@ -19,6 +19,6 @@
       };
     };
     opacity.terminal = 0.85;
-    # targets.btop.enable = false;
+    targets.btop.enable = false;
   };
 }

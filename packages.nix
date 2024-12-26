@@ -45,12 +45,13 @@
     nixd
     nil
 
-
+    ripgrep
     chromium
     libsForQt5.qt5.qtgraphicaleffects
     appimage-run
     (callPackage ./clife.nix {})
     (callPackage ./sddm-theme-wimst.nix {})
+    # (callPackage ./cura.nix {})
   ];
 
   #FONTS
