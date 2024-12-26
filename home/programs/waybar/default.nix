@@ -31,15 +31,43 @@ in{
           modules-right = [
             "network"
             "pulseaudio"
+            "custom/void"
             "backlight"
             "temperature"
             "cpu"
             "memory"
+            "custom/void"
             "battery"
             "clock"
             "tray"
             "custom/power"
           ];
+          
+
+          "custom/void" = {
+            "format" = "   ";
+          };
+          
+
+          "hyprland/workspaces"= {
+            "format"= " {icon} ";
+            "format-window-separator"= " ";
+            # "window-rewrite-default"= "";
+
+            "format-icons"= {
+              "active"= "";
+		      "default"= "";
+            };
+            "window-rewrite"= {
+              "title<.*youtube.*>"= "" ;
+              "class<firefox>"= "" ;
+              "class<firefox> title<.*github.*>"= "";
+              "kitty"= "";
+              "code"= "󰨞";
+              };
+          };
+
+          
 
           "custom/launcher" = {
             "format" = " ";
@@ -98,7 +126,7 @@ in{
           };
 
           "network" = {
-            "format-disconnected" = "󰯡";
+            "format-discnnected" = "󰯡";
             "format-ethernet" = "󰒢";
             "format-linked" = "󰖪 {essid} (No IPi)";
             "format-wifi" = "󰖩";
@@ -109,6 +137,8 @@ in{
             "tooltip-format-disconnected" = "Disconnected";
             "on-click"= "kitty -e 'better-nmtui'";
           };
+
+
 
           "custom/powermenu" = {
             "format" = "";
@@ -168,6 +198,7 @@ in{
           background: rgba(0, 0, 0, 0);
         }
 
+
         #clock,
         #battery,
         #cpu,
@@ -177,6 +208,7 @@ in{
         #pulseaudio,
         #custom-media,
         #tray,
+        #hyprland-workspaces,
         #backlight,
         #mode,
         #custom-power,
@@ -196,7 +228,7 @@ in{
            /*background-color: #${config.lib.stylix.colors.base00};*/
         }
         .modules-left {
-            margin: 2px 0 0 5px;
+            margin: 2px 0 0 0;
             background-color: #${config.lib.stylix.colors.base00};
         }
         #workspaces button {
@@ -216,6 +248,10 @@ in{
 
         #pulseaudio.muted {
             color: #${config.lib.stylix.colors.base09};
+        }
+        
+        #custom-void{
+          background: rgba(0, 0, 0, 0);
         }
 
       '';

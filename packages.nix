@@ -44,7 +44,9 @@
     home-manager
     nixd
     nil
-    docker
+
+
+    chromium
     libsForQt5.qt5.qtgraphicaleffects
     appimage-run
     (callPackage ./clife.nix {})
@@ -55,6 +57,8 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "Hack" "FiraMono" "FantasqueSansMono" "JetBrainsMono" ]; })
   ];
+
+  virtualisation.docker.enable = true;
 
   #MODULES
   programs.kdeconnect.enable = true;
@@ -78,6 +82,6 @@
     openFirewall = true;
     
   };
-
+  programs.nix-ld.enable = true;
 
 }
