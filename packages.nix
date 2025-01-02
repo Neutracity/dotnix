@@ -44,14 +44,14 @@
     home-manager
     nixd
     nil
-
+    btop
     ripgrep
     chromium
     libsForQt5.qt5.qtgraphicaleffects
     appimage-run
     (callPackage ./clife.nix {})
     (callPackage ./sddm-theme-wimst.nix {})
-    # (callPackage ./cura.nix {})
+    (callPackage ./cura.nix {})
   ];
 
   #FONTS
@@ -84,5 +84,7 @@
     
   };
   programs.nix-ld.enable = true;
+  services.udisks2.enable = true;
+
 
 }

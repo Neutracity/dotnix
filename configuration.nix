@@ -20,7 +20,6 @@
       ./devices.nix
       ./variables.nix
       ./config-var.nix
-      ./cura.nix
     ];
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "24.05";

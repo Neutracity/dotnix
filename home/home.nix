@@ -17,7 +17,7 @@
   home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
-
+    udiskie
     peaclock
     cbonsai
     pipes

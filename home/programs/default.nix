@@ -12,8 +12,10 @@
     ./btop
     # ./eza
     # ./cura
+    ./udiskie
     ./hyprlock
     ./firefox
+    ./pywalfox 
     ./fastfetch
     ./anyrun
     ./cava
