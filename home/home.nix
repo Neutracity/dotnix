@@ -15,7 +15,7 @@
   
 
   home.stateVersion = "24.05";
-
+  
   home.packages = with pkgs; [
     udiskie
     peaclock
@@ -24,7 +24,30 @@
     cmatrix
   ];
 
-  home.file = {};
+  home.file = {
+    ".cache/wal/colors".text = ''
+#${config.lib.stylix.colors.base00}
+#${config.lib.stylix.colors.base08}
+#${config.lib.stylix.colors.base0B}
+#${config.lib.stylix.colors.base0A}
+#${config.lib.stylix.colors.base0D}
+#${config.lib.stylix.colors.base0E}
+#${config.lib.stylix.colors.base0C}
+#${config.lib.stylix.colors.base05}
+#${config.lib.stylix.colors.base03}
+#${config.lib.stylix.colors.base08}
+#${config.lib.stylix.colors.base0B}
+#${config.lib.stylix.colors.base0A}
+#${config.lib.stylix.colors.base0D}
+#${config.lib.stylix.colors.base0E}
+#${config.lib.stylix.colors.base0C}
+#${config.lib.stylix.colors.base07}
+    '';
+
+  };
+
+  
+
 
   home.sessionVariables = {
     EDITOR = "nvim";

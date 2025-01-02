@@ -2,9 +2,9 @@
 {
   stylix= {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     polarity = "dark";
-    image = ./home/src/wallpaper/mocha2.png;
+    image = ./home/src/wallpaper/evangelion_1.jpg;
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
@@ -19,6 +19,8 @@
       };
     };
     opacity.terminal = 0.85;
-    # targets.btop.enable = false;
+    targets.btop.enable = false;
   };
+  
+
 }
