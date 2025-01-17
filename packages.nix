@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    (inputs.godot-bin.packages.x86_64-linux.godot-mono.override { dotnetPackage = pkgs.dotnet-sdk_7;})
+    (inputs.godot-bin.packages.x86_64-linux.godot-mono.override { dotnetPackage = pkgs.dotnet-sdk_9;})
     zsh-powerlevel10k
     playerctl
     osu-lazer

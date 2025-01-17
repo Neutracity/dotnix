@@ -98,6 +98,7 @@ in {
         force_zero_scaling = true;
       };
 
+
       exec-once = [
         "waybar"
         "hypridle"
@@ -136,6 +137,8 @@ in {
         "$mod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
         "$mod SHIFT, L, exec, hyprlock"
         "$mod, BackSpace, exec, powermenu"
+        "$mod, S, exec, moonlight stream DESKTOP-NALUKC5 Desktop"
+        "$mod, E, exec, $fileManager"
 
         #windows management
 
@@ -190,7 +193,14 @@ in {
         "Alt, Tab, movefocus, d"
 
         "$mod, J, togglesplit"
+        # "$mod+SHIFT, E, exec, eaccentmenu"
+        # ", e, exec, eaccentmenu, longpress, 500"
       ];
+      
+      bindo = [
+        ", E, exec, eaccentmenu, longpress, 500"
+      ];
+
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"

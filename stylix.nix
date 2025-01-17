@@ -11,7 +11,7 @@
     };
     fonts = {
       serif = {
-        package = pkgs.nerdfonts.override { fonts = [ "Hack" ]; };
+        package = pkgs.nerd-fonts.hack;
         name = "Hack";
       };
       sizes = {
@@ -19,7 +19,7 @@
       };
     };
     opacity.terminal = 0.85;
-    targets.btop.enable = false;
+    # targets.btop.enable = false;
   };
   
 
