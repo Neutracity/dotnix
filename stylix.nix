@@ -4,7 +4,7 @@
     enable = true;
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     polarity = "dark";
-    image = ./home/src/wallpaper/bladerunner_1.jpg;
+    image = ./home/src/wallpaper/bladerunner_2.jpg;
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";

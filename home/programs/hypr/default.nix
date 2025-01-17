@@ -51,7 +51,8 @@ in {
     
       monitor = [
         "eDP-1, 1920x1080@60.04Hz, auto, 1.25"
-        "HDMI-A-1, 1920x1080@60.00Hz, -1920x0, 1"
+        # ""HDMI-A-1, 1920x1080@60.00Hz, auto, 1.25, mirror, eDP-1
+        ", preferred, auto, 1.25, mirror, eDP-1"
       ];
 
       general = {
@@ -188,7 +189,7 @@ in {
 
         "Alt, Tab, movefocus, d"
 
-        #"$mod, J, togglesplit"
+        "$mod, J, togglesplit"
       ];
       bindm = [
         "$mod, mouse:272, movewindow"

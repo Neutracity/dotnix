@@ -3,5 +3,6 @@
     ./cavaintegrated
     ./wofiscripts
     ./generalscript
+    ./longkeyaccents
   ];
 }

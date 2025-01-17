@@ -11,7 +11,6 @@
     rar
     unrar
     moonlight-qt
-    remmina
     wget
     unzip
     pavucontrol
@@ -25,7 +24,6 @@
     gnome-bluetooth
     pavucontrol
     mesa
-    ocaml
     fzf
     blender
     heroic
@@ -35,10 +33,10 @@
     python3
     nmap
     vesktop
-    dolphin
     brightnessctl
     cava
     zoxide
+    libreoffice-qt6
     killall
     mpd
     home-manager
@@ -49,6 +47,8 @@
     chromium
     libsForQt5.qt5.qtgraphicaleffects
     appimage-run
+    gnome-online-accounts
+    git-lfs
     (callPackage ./clife.nix {})
     (callPackage ./sddm-theme-wimst.nix {})
     (callPackage ./cura.nix {})

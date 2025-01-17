@@ -16,48 +16,49 @@ in{
         mainBar = {
           layer = "top";
           position = "top";
-          height = 38 ;
-          margin-top = 8;
-          margin-left = 6;
-          margin-right = 0;
+          height = 32 ;
+          margin-top = gaps-out;
+          margin-left = gaps-out;
+          margin-right = gaps-out;
           output = [
             "eDP-1"
           ];
-         modules-left = [
+
+          modules-left = [
             "custom/launcher"
-            "custom/cava-internal"
             "hyprland/workspaces"
           ];
+
+          modules-center= [
+            "custom/cava-internal"
+          ];
+
           modules-right = [
-            "network"
-            "pulseaudio"
-            "custom/void"
-            "backlight"
-            "temperature"
-            "cpu"
-            "memory"
-            "custom/void"
-            "battery"
-            "clock"
+            "group/devices"
+            "group/hardware"
+            "group/time"
             "tray"
             "custom/power"
           ];
-          
 
-          "custom/void" = {
-            "format" = "   ";
+          "group/hardware" = {
+            "orientation" = "horizontal";
+            "modules" = ["cpu" "memory" "temperature"];
+          };
+
+          "group/devices" = {
+            "orientation" = "horizontal";
+            "modules" = ["network" "pulseaudio" "backlight" ];
+          };
+
+          "group/time" = {
+            "orientation" = "horizontal";
+            "modules" = ["battery" "clock"  ];
           };
           
-
           "hyprland/workspaces"= {
-            "format"= " {icon} ";
+            "format"= "";
             "format-window-separator"= " ";
-            # "window-rewrite-default"= "";
-
-            "format-icons"= {
-              "active"= "";
-		      "default"= "";
-            };
             "window-rewrite"= {
               "title<.*youtube.*>"= "" ;
               "class<firefox>"= "" ;
@@ -70,7 +71,8 @@ in{
           
 
           "custom/launcher" = {
-            "format" = " ";
+            "format" = "";
+            "icon-size" = 15;
             "on-click" = "exec menu";
             "on-click-middle" = "exec powermenu";
             "on-click-right" = "exec wallpaper_random";
@@ -140,6 +142,8 @@ in{
 
 
 
+
+
           "custom/powermenu" = {
             "format" = "";
             "on-click" = "pkill rofi || ~/.config/rofi/powermenu/type-3/powermenu.sh";
@@ -187,7 +191,7 @@ in{
       };  
       style = ''
         *{
-          border-radius: ${toString rounding};
+          border-radius: ${toString (rounding+2)} ;
           border : ${toString border-size};
         }
         #custom-cava-internal{
@@ -197,7 +201,6 @@ in{
         window#waybar {
           background: rgba(0, 0, 0, 0);
         }
-
 
         #clock,
         #battery,
@@ -212,29 +215,96 @@ in{
         #backlight,
         #mode,
         #custom-power,
-        #custom-menu,
-        #custom-cava-internal,
         #custom-launcher,
         #idle_inhibitor {
             padding: 0 10px;
+            font-size: 16px;
+        }
+        
+        #custom-menu{
+            font-size: 20px;
+            padding: 0 10px;
         }
         /*-----module groups----*/
+
+
         .modules-right {
-            margin: 2px 10px 0 0;
-            background-color: #${config.lib.stylix.colors.base00};
+            background-color: transparent; 
         }
+
         .modules-center {
-            margin: 2px 0 0 0;
-           /*background-color: #${config.lib.stylix.colors.base00};*/
-        }
-        .modules-left {
-            margin: 2px 0 0 0;
+            margin: 0 0 0 0;
             background-color: #${config.lib.stylix.colors.base00};
         }
-        #workspaces button {
-            padding: 1px 4px;
-            background-color: transparent;
+
+        .modules-left {
+            margin: 0 0 0 0;
+            background-color: #${config.lib.stylix.colors.base00};
         }
+        
+        #custom-cava-internal{
+            background-color: #${config.lib.stylix.colors.base00};
+            padding: 0px 10px;
+            opacity: 0.8; 
+            font-size: 16px;
+        }
+
+        #workspaces {
+            margin: 5px 5px 5px 5px;
+            padding: 4px 1px;
+            background-color: #${config.lib.stylix.colors.base00};
+            color: #${config.lib.stylix.colors.base00};
+            transition: all 0.3s ease-in-out;
+            opacity: 0.8;
+        }
+          
+        #workspaces button {
+            padding: 0px 10px;
+            margin: 0px 3px;
+            background-color: #${config.lib.stylix.colors.base01};
+            color: #${config.lib.stylix.colors.base01};
+            transition: all 0.3s ease-in-out;
+            opacity: 0.4;
+            font-size: 13px;
+        }
+        
+        #workspaces button.active {
+            min-width:30px;
+            background-size: 400% 400%;
+            background-color: #${config.lib.stylix.colors.base05};
+            color: #${config.lib.stylix.colors.base05};
+            transition: all 0.3s ease-in-out;
+            opacity: 1.0;
+        }
+        
+        #hardware {
+            background-color: #${config.lib.stylix.colors.base00};
+            opacity: 0.8;
+            margin: 0px 0px 0px 10px;
+            padding: 0px 3px;
+        }
+
+        #devices {
+            background-color: #${config.lib.stylix.colors.base00};
+            opacity: 0.8;
+            margin: 0px 0px 0px 10px;
+            padding: 0px 3px;
+        }
+
+        #time {
+            background-color: #${config.lib.stylix.colors.base00};
+            opacity: 0.8;
+            margin: 0px 0px 0px 10px;
+            padding: 0px 6px 0px 3px;
+        }
+
+        #tray {
+            background-color: #${config.lib.stylix.colors.base00}; 
+            opacity: 0.8;
+            margin: 0px 0px 0px 10px;
+            padding: 0px 10px;
+        }
+
 
         #battery.warning:not(.charging) {
 	      color: #${config.lib.stylix.colors.base0A};
@@ -250,10 +320,6 @@ in{
             color: #${config.lib.stylix.colors.base09};
         }
         
-        #custom-void{
-          background: rgba(0, 0, 0, 0);
-        }
-
       '';
     };
   };
