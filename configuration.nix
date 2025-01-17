@@ -3,6 +3,11 @@
 { config, pkgs, inputs, ... }:
 
 {
+  nixpkgs.config = {
+    allowBroken = true;
+    allowUnfree = true;
+    allowInsecure = true;
+  };
   imports =
     [
       ./hardware-configuration.nix
@@ -22,6 +27,5 @@
       ./config-var.nix
     ];
 
-  nixpkgs.config.allowUnfree = true;
   system.stateVersion = "24.05";
 }
