@@ -1,10 +1,11 @@
 { pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    (inputs.godot-bin.packages.x86_64-linux.godot-mono.override { dotnetPackage = pkgs.dotnet-sdk_9;})
+    (inputs.godot-bin.packages.x86_64-linux.godot-mono.override { msbuild = pkgs.bash;})
+    dotnet-sdk_7
     zsh-powerlevel10k
     playerctl
-    osu-lazer
+    # osu-lazer
     bluetui
     gnome-calendar
     vim
@@ -17,8 +18,8 @@
     steam
     git
     tree
-    prismlauncher
-    audacity
+    # prismlauncher
+    # audacity
     clinfo
     btop
     gnome-bluetooth
@@ -28,7 +29,6 @@
     blender
     heroic
     thefuck
-    lmms
     gimp
     python3
     nmap
@@ -36,7 +36,6 @@
     brightnessctl
     cava
     zoxide
-    libreoffice-qt6
     killall
     mpd
     home-manager
@@ -44,19 +43,22 @@
     nil
     btop
     ripgrep
-    chromium
+    # chromium
     libsForQt5.qt5.qtgraphicaleffects
     appimage-run
-    gnome-online-accounts
+    # gnome-online-accounts
     git-lfs
     (callPackage ./clife.nix {})
     (callPackage ./sddm-theme-wimst.nix {})
-    (callPackage ./cura.nix {})
+    # (callPackage ./cura.nix {})
   ];
 
   #FONTS
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "Hack" "FiraMono" "FantasqueSansMono" "JetBrainsMono" ]; })
+  fonts.packages = with pkgs.nerd-fonts; [
+    hack 
+    fira-mono 
+    fantasque-sans-mono 
+    jetbrains-mono 
   ];
 
   virtualisation.docker.enable = true;

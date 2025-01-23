@@ -195,7 +195,7 @@ in{
           border : ${toString border-size};
         }
         #custom-cava-internal{
-          font-family: "Hack Nerd Font" ;
+          font-family: "Hack" ;
         }
 
         window#waybar {

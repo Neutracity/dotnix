@@ -20,6 +20,8 @@
     };
     opacity.terminal = 0.85;
     # targets.btop.enable = false;
+    # targets.hyprland.enable = false;
+    # targets.hyprpaper.enable = true;
   };
   
 

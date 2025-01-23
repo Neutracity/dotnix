@@ -17,10 +17,11 @@
     ./firefox
     ./pywalfox 
     ./fastfetch
-    ./anyrun
+    # ./anyrun
+    ./helix
     ./cava
     ./spicetify
-    ./gtk
+    # ./gtk
     ./xdg
   ];
 }

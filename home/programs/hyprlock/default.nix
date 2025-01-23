@@ -17,7 +17,7 @@ in {
       # BACKGROUND
       background = {
         monitor = "";
-        path = imageStr;
+        path = lib.mkDefault imageStr;
         blur_passes = 0;
         contrast = 0.8916;
         brightness = 0.7172;
