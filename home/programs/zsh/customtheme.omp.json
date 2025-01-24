@@ -284,5 +284,13 @@
       "newline": true
     }
   ],
+  "transient_prompt": {
+    "foreground": "#ffffff",
+    "template": "     {{ .Shell }} ",
+	"background": "#0077c2",
+	"leading_diamond": "\ue0b6",
+	"trailing_diamond": "<transparent,background>\ue0b2</>",
+	"style": "diamond"
+  },
   "version": 3
 }
