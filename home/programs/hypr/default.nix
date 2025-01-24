@@ -193,13 +193,24 @@ in {
 
         "Alt, Tab, movefocus, d"
 
+
         "$mod, J, togglesplit"
         # "$mod+SHIFT, E, exec, eaccentmenu"
         # ", e, exec, eaccentmenu, longpress, 500"
       ];
+
+      unbind = [
+        # Disable Arrow Keys
+        ",Right"
+        ",Left"
+        ",Up"
+        ",Down"
+      ];
+
       
       bindo = [
         ",e, exec, eaccentmenu"
+        ",a, exec, aaccentmenu"
       ];
 
       bindm = [

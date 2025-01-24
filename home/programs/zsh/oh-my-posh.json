@@ -1,0 +1,7 @@
+{
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "#ffffff",
+    "template": "{{ .Shell }}> "
+  }
+}

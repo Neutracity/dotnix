@@ -4,7 +4,7 @@
   ...
 }: {
   programs.starship = {
-      enable = true;
+      enable = false;
       settings = {
         add_newline = true;
         command_timeout = 1300;
@@ -15,7 +15,13 @@
           error_symbol = "[✗](bold red) ";
         };
       };
-};
+  };
+  programs.oh-my-posh ={
+    enable = true;
+    enableZshIntegration = true;
+    useTheme = "atomic";
+    settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "./oh-my-posh.json"));
+  };
   home.packages = with pkgs; [ pokemon-colorscripts-mac];
   programs = {
     zsh = {
@@ -66,9 +72,6 @@
         ];
       };
       initExtra = ''
-        prompt_dir() {
-        prompt_segment blue $CURRENT_FG '%1~'
-        }
         pokemon-colorscripts -r | tail -n +3 
       '';
 

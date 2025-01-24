@@ -85,6 +85,34 @@
     openFirewall = true;
     
   };
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = [ "*" ];
+        settings = {
+          # The main layer, if you choose to declare it in Nix
+          main = {
+            capslock = "overload(control, esc)";
+            esc = "layer(arrow)";
+            left = "noop";
+            right = "noop";
+            down = "noop";
+            up = "noop";
+          };
+          arrow= {
+            h = "left";
+            k = "up";
+            j = "down";
+            l = "right";
+          };
+        };
+        extraConfig = ''
+          # put here any extra-config, e.g. you can copy/paste here directly a configuration, just remove the ids part
+        '';
+      };
+    };
+  };
   programs.nix-ld.enable = true;
   services.udisks2.enable = true;
 

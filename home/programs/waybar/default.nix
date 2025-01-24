@@ -58,14 +58,7 @@ in{
           
           "hyprland/workspaces"= {
             "format"= "";
-            "format-window-separator"= " ";
-            "window-rewrite"= {
-              "title<.*youtube.*>"= "" ;
-              "class<firefox>"= "" ;
-              "class<firefox> title<.*github.*>"= "";
-              "kitty"= "";
-              "code"= "󰨞";
-              };
+            "format-window-separator"= "";
           };
 
           
@@ -235,11 +228,13 @@ in{
         .modules-center {
             margin: 0 0 0 0;
             background-color: #${config.lib.stylix.colors.base00};
+            opacity: 0.8;
         }
 
         .modules-left {
             margin: 0 0 0 0;
             background-color: #${config.lib.stylix.colors.base00};
+            opacity: 0.8;
         }
         
         #custom-cava-internal{
@@ -251,7 +246,7 @@ in{
 
         #workspaces {
             margin: 5px 5px 5px 5px;
-            padding: 4px 1px;
+            padding: 0px 0px;
             background-color: #${config.lib.stylix.colors.base00};
             color: #${config.lib.stylix.colors.base00};
             transition: all 0.3s ease-in-out;
@@ -259,8 +254,8 @@ in{
         }
           
         #workspaces button {
-            padding: 0px 10px;
-            margin: 0px 3px;
+            padding: 0px 6px;
+            margin: 0px 4px;
             background-color: #${config.lib.stylix.colors.base01};
             color: #${config.lib.stylix.colors.base01};
             transition: all 0.3s ease-in-out;
@@ -269,8 +264,8 @@ in{
         }
         
         #workspaces button.active {
-            min-width:30px;
-            background-size: 400% 400%;
+            min-width:40px;
+            background-size: 100% 400%;
             background-color: #${config.lib.stylix.colors.base05};
             color: #${config.lib.stylix.colors.base05};
             transition: all 0.3s ease-in-out;
