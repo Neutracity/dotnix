@@ -20,7 +20,7 @@
     enable = true;
     enableZshIntegration = true;
     useTheme = "atomic";
-    settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "./oh-my-posh.json"));
+    # settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile ./customtheme.omp.json));
   };
   home.packages = with pkgs; [ pokemon-colorscripts-mac];
   programs = {
