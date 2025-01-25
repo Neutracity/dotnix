@@ -2,9 +2,9 @@
 {
   stylix= {
     enable = true;
-    #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
     polarity = "dark";
-    image = ./home/src/wallpaper/bladerunner_2.jpg;
+    image = ./home/src/wallpaper/kanagawa_2.jpg;
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
