@@ -18,16 +18,16 @@
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       ];
     };
-      optimise.automatic = true;
-      extraOptions = ''
-          warn-dirty = false
-        '';
-      gc = {
-        automatic = true;
-        dates = "weekly";
-        options = "--delete-older-than 7d";
-      };
+    optimise.automatic = true;
+    extraOptions = ''
+        warn-dirty = false
+      '';
+    gc = {
+      automatic = false;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
     };
+  };
   nixpkgs.config = { allowBroken = true; allowUnfree = true; }; 
 
   services.logind.extraConfig = ''

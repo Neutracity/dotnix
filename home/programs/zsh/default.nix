@@ -37,10 +37,11 @@
         uzsh = "source /home/neutra/.zshrc";
         econfig = "nvim /home/neutra/.dotfiles/configuration.nix";
         eflake = "nvim /home/neutra/.dotfiles/flake.nix";
-        nr = "sudo nixos-rebuild switch --flake /home/neutra/.dotfiles#default";
+        nr = "sudo nh os switch -H default /home/neutra/.dotfiles";
+        nclean = "nh clean all";
         nu = "sudo nixos-rebuild switch --upgrade-all /home/neutra/.dotfiles";
         fu = "nix flake update -I /home/neutra/.dotfiles/flake.nix";
-        hr = "home-manager switch --flake /home/neutra/.dotfiles";
+        hr = "nh home switch /home/neutra/.dotfiles";
         se = "sudoedit";
         ff = "fastfetch";
         neofetch = "fastfetch";

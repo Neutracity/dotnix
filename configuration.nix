@@ -36,6 +36,7 @@
       ./devices.nix
       ./variables.nix
       ./config-var.nix
+      ./seafile.nix
     ];
 
   system.stateVersion = "24.05";

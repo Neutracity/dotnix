@@ -3,7 +3,7 @@
   environment.systemPackages = with pkgs; [
     (inputs.godot-bin.packages.x86_64-linux.godot-mono.override { msbuild = pkgs.bash;})
     dotnet-sdk_7
-    zsh-powerlevel10k
+    # zsh-powerlevel10k
     playerctl
     # osu-lazer
     bluetui
@@ -27,11 +27,11 @@
     mesa
     fzf
     blender
-    heroic
+    # heroic
     thefuck
     gimp
     python3
-    nmap
+    # nmap
     vesktop
     brightnessctl
     cava
@@ -48,6 +48,7 @@
     appimage-run
     # gnome-online-accounts
     git-lfs
+    alejandra
     (callPackage ./clife.nix {})
     (callPackage ./sddm-theme-wimst.nix {})
     # (callPackage ./cura.nix {})
@@ -65,14 +66,14 @@
 
   #MODULES
   programs.kdeconnect.enable = true;
-  # programs.nh = {
-  #   enable = true;
-  #   clean.enable = true;
-  #   clean.extraArgs = "--keep-since 4d --keep 3";
-  #   flake = "/home/neutra/.dotfiles/";
-  # };
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/neutra/.dotfiles/";
+  };
  services.solaar = {
-    enable = true; # Enable the service
+    enable = false; # Enable the service
     package = pkgs.solaar; # The package to use
     window = "hide"; # Show the window on startup (show, *hide*, only [window only])
     batteryIcons = "regular"; # Which battery icons to use (*regular*, symbolic, solaar)
