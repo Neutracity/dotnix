@@ -37,7 +37,7 @@
         uzsh = "source /home/neutra/.zshrc";
         econfig = "nvim /home/neutra/.dotfiles/configuration.nix";
         eflake = "nvim /home/neutra/.dotfiles/flake.nix";
-        nr = "sudo nh os switch -H default /home/neutra/.dotfiles";
+        nr = "nh os switch -H default /home/neutra/.dotfiles";
         nclean = "nh clean all";
         nu = "sudo nixos-rebuild switch --upgrade-all /home/neutra/.dotfiles";
         fu = "nix flake update -I /home/neutra/.dotfiles/flake.nix";

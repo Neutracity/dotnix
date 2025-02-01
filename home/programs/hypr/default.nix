@@ -46,7 +46,7 @@ in {
     settings = {
       "$mod" = "SUPER";
       "$terminal" = "kitty";
-      "$fileManager" = "dolphin";
+      "$fileManager" = "nemo";
       "$menu" = "menu";
     
       monitor = [
@@ -133,13 +133,14 @@ in {
 
         # My customs keybinds
 
-        "$mod SHIFT, S, exec, swappyfile=$(hyprshot -m region -- echo); swappy -f $swappyfile -o $swappyfile "
+        "$mod SHIFT, S, exec, swappyfile=$(hyprshot -o /home/neutra/media/pictures/screenshots -m region -- echo); swappy -f $swappyfile -o $swappyfile "
         "$mod SHIFT, M, exec, pkill waybar || waybar "
         "$mod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
         "$mod SHIFT, L, exec, hyprlock"
         "$mod, BackSpace, exec, powermenu"
         "$mod, S, exec, moonlight stream DESKTOP-NALUKC5 Desktop"
         "$mod, E, exec, $fileManager"
+        "$mod, Space, togglesplit"
 
         #windows management
 
