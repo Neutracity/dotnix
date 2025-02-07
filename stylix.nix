@@ -1,6 +1,6 @@
-{  pkgs, ... }:
+{ pkgs, ... }:
 {
-  stylix= {
+  stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
     polarity = "dark";
@@ -15,7 +15,7 @@
         name = "Hack";
       };
       sizes = {
-        popups = 12 ;
+        popups = 12;
       };
     };
     opacity.terminal = 0.85;
@@ -23,6 +23,6 @@
     # targets.hyprland.enable = false;
     # targets.hyprpaper.enable = true;
   };
-  
+
 
 }

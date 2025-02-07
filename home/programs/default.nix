@@ -15,7 +15,7 @@
     ./udiskie
     ./hyprlock
     ./firefox
-    ./pywalfox 
+    ./pywalfox
     ./fastfetch
     # ./anyrun
     ./helix

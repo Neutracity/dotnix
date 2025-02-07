@@ -1,6 +1,6 @@
-{lib, ...}:
+{ lib, ... }:
 {
-  programs.btop ={
+  programs.btop = {
     enable = true;
     settings = {
       color_theme = lib.mkForce "TTY";

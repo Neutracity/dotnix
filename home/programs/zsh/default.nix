@@ -1,28 +1,27 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   programs.starship = {
-      enable = false;
-      settings = {
-        add_newline = true;
-        command_timeout = 1300;
-        scan_timeout = 50;
-        format= "$all$nix_shell$nodejs$lua$golang$rust$php$git_branch$git_commit$git_state$git_status\n$username$hostname$directory";
-        character = {
-          success_symbol = "[](bold green) ";
-          error_symbol = "[✗](bold red) ";
-        };
+    enable = false;
+    settings = {
+      add_newline = true;
+      command_timeout = 1300;
+      scan_timeout = 50;
+      format = "$all$nix_shell$nodejs$lua$golang$rust$php$git_branch$git_commit$git_state$git_status\n$username$hostname$directory";
+      character = {
+        success_symbol = "[](bold green) ";
+        error_symbol = "[✗](bold red) ";
       };
+    };
   };
-  programs.oh-my-posh ={
+  programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = true;
     # useTheme = "atomic";
     settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile ./customtheme.omp.json));
   };
-  home.packages = with pkgs; [ pokemon-colorscripts-mac];
+  home.packages = with pkgs; [ pokemon-colorscripts-mac ];
   programs = {
     zsh = {
       enable = true;
@@ -55,7 +54,7 @@
         gl = "git log";
         cd = "z";
       };
-      
+
       enableCompletion = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;

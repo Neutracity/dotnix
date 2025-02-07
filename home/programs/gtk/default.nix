@@ -23,7 +23,8 @@ let
   c14 = "#${config.lib.stylix.colors.base0C}";
   c15 = "#${config.lib.stylix.colors.base07}";
 
-in {
+in
+{
 
   qt = {
     enable = true;

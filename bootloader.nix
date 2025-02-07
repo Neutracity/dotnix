@@ -1,18 +1,17 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   stylix.targets.plymouth.enable = false;
+  stylix.targets.grub.enable = false;
   boot = {
 
     plymouth = {
       enable = true;
-      theme = "rings";
-      themePackages = with pkgs; [
-        # By default we would install all themes
-        (adi1090x-plymouth-themes.override {
-          selected_themes = [ "rings" ];
-        })
+      theme = "mc";
+      themePackages = [
+        pkgs.plymouth-minecraft-theme
       ];
+
     };
 
     # Enable "Silent Boot"
@@ -28,13 +27,21 @@
       "udev.log_priority=3"
     ];
 
-    # Hide the OS choice for bootloaders.
-    # It's still possible to open the bootloader list by pressing any key
-    # It will just not appear on screen unless a key is pressed
     loader = {
-      timeout = 0;
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
+      timeout = 4;
+      grub = {
+        enable = true;
+        useOSProber = true;
+        efiSupport = true;
+        efiInstallAsRemovable = true;
+        device = "nodev";
+        minegrub-theme = {
+          enable = true;
+          splash = "100% Flakes!";
+          background = "background_options/1.8  - [Classic Minecraft].png";
+          boot-options-count = 4;
+        };
+      };
     };
   };
 }

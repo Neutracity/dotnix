@@ -1,9 +1,8 @@
-{
-  lib,
-  pkgs,
-  config,
-  defaults,
-  ...
+{ lib
+, pkgs
+, config
+, defaults
+, ...
 }:
 let
   inherit (lib.modules) mkIf mkForce;

@@ -1,5 +1,5 @@
 { config, pkgs, inputs, ... }:
-  let pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+let pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   services.xserver.enable = true;
@@ -11,4 +11,6 @@ in
     package = pkgs-unstable.mesa.drivers;
     package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
   };
+  programs.uwsm.enable = true;
+  programs.hyprland.withUWSM = true;
 }

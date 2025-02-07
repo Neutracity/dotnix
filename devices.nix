@@ -2,15 +2,15 @@
 {
   services.printing.enable = true;
 
-  
-  hardware.bluetooth.enable = true; 
+
+  hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
- swapDevices = [ {
+  swapDevices = [{
     device = "/var/lib/swapfile";
-    size = 8*1024;
-  } ];
+    size = 8 * 1024;
+  }];
 
   hardware.graphics.enable32Bit = true;
   # services.pulseaudio.enable = true;

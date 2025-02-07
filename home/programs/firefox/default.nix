@@ -1,8 +1,7 @@
-{
-  pkgs,
-  inputs,
-  lib,
-  ...
+{ pkgs
+, inputs
+, lib
+, ...
 }: {
   programs.firefox = {
     enable = true;
@@ -45,7 +44,7 @@
           sidebery
           sponsorblock
           adaptive-tab-bar-colour
-          (youtube-recommended-videos.overrideAttrs (o: {meta = o.meta // {license = lib.licenses.mit;};}))
+          (youtube-recommended-videos.overrideAttrs (o: { meta = o.meta // { license = lib.licenses.mit; }; }))
           darkreader
         ];
 

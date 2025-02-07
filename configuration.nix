@@ -3,21 +3,6 @@
 { config, pkgs, inputs, ... }:
 
 {
-  nixpkgs.config = {
-    allowBroken = true;
-    allowUnfree = true;
-    allowInsecure = true;
-  };
-  nixpkgs.config.permittedInsecurePackages = [
-    "dotnet-runtime-6.0.36"
-    "aspnetcore-runtime-6.0.36"
-    "aspnetcore-runtime-wrapped-6.0.36"
-    "dotnet-sdk-6.0.428"
-    "dotnet-sdk-wrapped-6.0.428"
-    "rider"
-    "dotnet-sdk-7.0.410"
-    "dotenv6"
-  ];
 
   imports =
     [

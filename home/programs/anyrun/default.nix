@@ -1,8 +1,7 @@
-{
-  config,
-  inputs,
-  pkgs,
-  ...
+{ config
+, inputs
+, pkgs
+, ...
 }: {
   programs.anyrun = {
     enable = true;
@@ -14,9 +13,9 @@
         inputs.anyrun.packages.${pkgs.system}.shell
         inputs.anyrun.packages.${pkgs.system}.symbols
       ];
-      x = {fraction = 0.5;};
-      y = {fraction = 0.3;};
-      width = {fraction = 0.3;};
+      x = { fraction = 0.5; };
+      y = { fraction = 0.3; };
+      width = { fraction = 0.3; };
       hideIcons = false;
       ignoreExclusiveZones = false;
       layer = "overlay";

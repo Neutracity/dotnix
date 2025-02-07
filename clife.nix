@@ -1,4 +1,4 @@
-{ stdenv, lib, pkgs, fetchFromGitHub}:
+{ stdenv, lib, pkgs, fetchFromGitHub }:
 
 stdenv.mkDerivation rec {
   name = "clife-${version}";

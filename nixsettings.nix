@@ -20,15 +20,14 @@
     };
     optimise.automatic = true;
     extraOptions = ''
-        warn-dirty = false
-      '';
+      warn-dirty = false
+    '';
     gc = {
       automatic = false;
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
   };
-  nixpkgs.config = { allowBroken = true; allowUnfree = true; }; 
 
   services.logind.extraConfig = ''
     # don’t shutdown when power button is short-pressed

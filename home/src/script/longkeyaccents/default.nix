@@ -13,8 +13,8 @@ let
         wtype $selected
         fi
       fi
-      '';
-  
+    '';
+
   aaccentmenu = pkgs.writeShellScriptBin "aaccentmenu"
     ''
       if pgrep wofi; then
@@ -27,5 +27,6 @@ let
         wtype $selected
         fi
       fi
-      '';
-in { home.packages = [ aaccentmenu eaccentmenu pkgs.wtype ]; }
+    '';
+in
+{ home.packages = [ aaccentmenu eaccentmenu pkgs.wtype ]; }

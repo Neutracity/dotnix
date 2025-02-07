@@ -1,4 +1,3 @@
-
 { config, pkgs, inputs, ... }:
 {
   services.displayManager.sddm = {

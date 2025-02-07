@@ -1,7 +1,9 @@
 { pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    (inputs.godot-bin.packages.x86_64-linux.godot-mono.override { msbuild = pkgs.bash;})
+    (inputs.godot-bin.packages.x86_64-linux.godot-mono.override { msbuild = pkgs.bash; })
+    inputs.zen-browser.packages."${system}".default
+    weylus
     dotnet-sdk_7
     # zsh-powerlevel10k
     playerctl
@@ -49,17 +51,17 @@
     # gnome-online-accounts
     git-lfs
     alejandra
-    (callPackage ./clife.nix {})
-    (callPackage ./sddm-theme-wimst.nix {})
+    (callPackage ./clife.nix { })
+    (callPackage ./sddm-theme-wimst.nix { })
     # (callPackage ./cura.nix {})
   ];
 
   #FONTS
   fonts.packages = with pkgs.nerd-fonts; [
-    hack 
-    fira-mono 
-    fantasque-sans-mono 
-    jetbrains-mono 
+    hack
+    fira-mono
+    fantasque-sans-mono
+    jetbrains-mono
   ];
 
   virtualisation.docker.enable = true;
@@ -72,19 +74,19 @@
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/neutra/.dotfiles/";
   };
- services.solaar = {
+  services.solaar = {
     enable = false; # Enable the service
     package = pkgs.solaar; # The package to use
     window = "hide"; # Show the window on startup (show, *hide*, only [window only])
     batteryIcons = "regular"; # Which battery icons to use (*regular*, symbolic, solaar)
     extraArgs = ""; # Extra arguments to pass to solaar on startup
-  }; 
+  };
   services.printing.enable = true;
   services.avahi = {
     enable = true;
     nssmdns4 = true;
     openFirewall = true;
-    
+
   };
   services.keyd = {
     enable = true;
@@ -101,7 +103,7 @@
             down = "noop";
             up = "noop";
           };
-          arrow= {
+          arrow = {
             h = "left";
             k = "up";
             j = "down";

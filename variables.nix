@@ -1,4 +1,4 @@
-{ config , ...}:
+{ config, ... }:
 {
   imports = [ ./config-var.nix ];
   config.var = {
@@ -27,5 +27,5 @@
 
     };
 
-  };  
+  };
 }

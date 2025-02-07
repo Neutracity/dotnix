@@ -760,6 +760,42 @@
         "type": "github"
       }
     },
+    "minecraft-plymouth-theme": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1725715562,
+        "narHash": "sha256-3KrfC8RHJ7iw79Xu9Euxqd1PWMy9zGWMB/EDamhOnUw=",
+        "owner": "nikp123",
+        "repo": "minecraft-plymouth-theme",
+        "rev": "1fa85508cb2070e432f965ac8f5e0512c946f607",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nikp123",
+        "repo": "minecraft-plymouth-theme",
+        "type": "github"
+      }
+    },
+    "minegrub-theme": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1734809378,
+        "narHash": "sha256-HH3f/xu2Q06pkUOggRyTjcVdjes4exr59Do/4ti25N4=",
+        "owner": "Lxtharia",
+        "repo": "minegrub-theme",
+        "rev": "987408b8d2cbf0a79a15981788d423fc3e54a80f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Lxtharia",
+        "repo": "minegrub-theme",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1736012469,
@@ -794,27 +830,24 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1736883708,
-        "narHash": "sha256-uQ+NQ0/xYU0N1CnXsa2zghgNaOPxWpMJXSUJJ9W7140=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "eb62e6aa39ea67e0b8018ba8ea077efe65807dc8",
-        "type": "github"
+        "lastModified": 1718208800,
+        "narHash": "sha256-US1tAChvPxT52RV8GksWZS415tTS7PV42KTc2PNDBmc=",
+        "path": "/nix/store/aa0zsahvyqnvzkicsh29jirm9hwv95pg-source",
+        "rev": "cc54fb41d13736e92229c21627ea4f22199fee6b",
+        "type": "path"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
+        "id": "nixpkgs",
+        "type": "indirect"
       }
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1736883708,
-        "narHash": "sha256-uQ+NQ0/xYU0N1CnXsa2zghgNaOPxWpMJXSUJJ9W7140=",
+        "lastModified": 1689850295,
+        "narHash": "sha256-fUYf6WdQlhd2H+3aR8jST5dhFH1d0eE22aes8fNIfyk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "eb62e6aa39ea67e0b8018ba8ea077efe65807dc8",
+        "rev": "5df4d78d54f7a34e9ea1f84a22b4fd9baebc68d0",
         "type": "github"
       },
       "original": {
@@ -826,11 +859,27 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1736798957,
-        "narHash": "sha256-qwpCtZhSsSNQtK4xYGzMiyEDhkNzOCz/Vfu4oL2ETsQ=",
+        "lastModified": 1736883708,
+        "narHash": "sha256-uQ+NQ0/xYU0N1CnXsa2zghgNaOPxWpMJXSUJJ9W7140=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "eb62e6aa39ea67e0b8018ba8ea077efe65807dc8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_5": {
+      "locked": {
+        "lastModified": 1736883708,
+        "narHash": "sha256-uQ+NQ0/xYU0N1CnXsa2zghgNaOPxWpMJXSUJJ9W7140=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9abb87b552b7f55ac8916b6fc9e5cb486656a2f3",
+        "rev": "eb62e6aa39ea67e0b8018ba8ea077efe65807dc8",
         "type": "github"
       },
       "original": {
@@ -870,11 +919,14 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
-        "nixpkgs": "nixpkgs_2",
+        "minecraft-plymouth-theme": "minecraft-plymouth-theme",
+        "minegrub-theme": "minegrub-theme",
+        "nixpkgs": "nixpkgs_4",
         "nixpkgs-sddm": "nixpkgs-sddm",
         "solaar": "solaar",
         "spicetify-nix": "spicetify-nix",
-        "stylix": "stylix"
+        "stylix": "stylix",
+        "zen-browser": "zen-browser"
       }
     },
     "snowfall-lib": {
@@ -925,7 +977,7 @@
     "spicetify-nix": {
       "inputs": {
         "flake-compat": "flake-compat_4",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_5"
       },
       "locked": {
         "lastModified": 1737087380,
@@ -953,7 +1005,9 @@
         "git-hooks": "git-hooks",
         "gnome-shell": "gnome-shell",
         "home-manager": "home-manager_2",
-        "nixpkgs": "nixpkgs_4",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "systems": "systems_3",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",
@@ -1123,6 +1177,26 @@
       "original": {
         "owner": "hyprwm",
         "repo": "xdg-desktop-portal-hyprland",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1738728325,
+        "narHash": "sha256-ogMOMVHDXykqP1qCjh7K3TyHzIy5lmohvofYAbn+IT8=",
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
+        "rev": "38264719b0a20323f3d16a94db5d4cb2860681a5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }

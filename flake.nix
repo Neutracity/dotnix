@@ -3,20 +3,34 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    minegrub-theme.url = "github:Lxtharia/minegrub-theme";
+    minecraft-plymouth-theme.url = "github:nikp123/minecraft-plymouth-theme";
+
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     solaar = {
-      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";# For latest stable version
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     godot-bin = {
       url = "github:Damianu/godot4-bin";
       inputs.nixpkgs.follows = "nixpkgs"; #Might prevent some OpenGL issues
     };
 
-    stylix.url = "github:danth/stylix";
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -31,31 +45,59 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
-    
-    nixpkgs-sddm.url = "github:NixOS/nixpkgs/1997e4aa514312c1af7e2bda7fad1644e778ff26";
-     
+
+    nixpkgs-sddm = {
+      url = "github:NixOS/nixpkgs/1997e4aa514312c1af7e2bda7fad1644e778ff26";
+    };
+
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-sddm,  home-manager, spicetify-nix, stylix, solaar, ... }@inputs:
+  outputs = { self, minecraft-plymouth-theme, nixpkgs, nixpkgs-sddm, home-manager, spicetify-nix, stylix, solaar, ... }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [ minecraft-plymouth-theme.overlay ];
+          config = {
+            allowBroken = true;
+            allowUnfree = true;
+            allowInsecure = true;
+            permittedInsecurePackages = [
+              "dotnet-runtime-6.0.36"
+              "aspnetcore-runtime-6.0.36"
+              "aspnetcore-runtime-wrapped-6.0.36"
+              "dotnet-sdk-6.0.428"
+              "dotnet-sdk-wrapped-6.0.428"
+              "rider"
+              "dotnet-sdk-7.0.410"
+              "dotenv6"
+            ];
+          };
+      };
     in
     {
       # Nixos declaration
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+        inherit pkgs;
         specialArgs = { inherit inputs; };
-        modules = [ ./configuration.nix inputs.stylix.nixosModules.stylix solaar.nixosModules.default ];
+        modules = [
+          ./configuration.nix
+          inputs.stylix.nixosModules.stylix
+          solaar.nixosModules.default
+          inputs.minegrub-theme.nixosModules.default
+        ];
       };
       formatter.${system} = pkgs.nixpkgs-fmt;
       # Home manager declaration
       homeConfigurations."neutra" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home/home.nix stylix.homeManagerModules.stylix  ];
+        modules = [
+          ./home/home.nix
+          stylix.homeManagerModules.stylix
+        ];
         extraSpecialArgs = {
-          inherit inputs spicetify-nix ;
+          inherit inputs spicetify-nix;
         };
 
       };

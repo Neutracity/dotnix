@@ -3,7 +3,6 @@
 {
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "en_US.UTF-8";
-  nixpkgs.config.allowBroken = true;
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "fr_FR.UTF-8";
     LC_IDENTIFICATION = "fr_FR.UTF-8";
@@ -24,5 +23,5 @@
 
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   xdg.portal.config.common.default = "gtk";
-  
+
 }

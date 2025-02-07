@@ -1,14 +1,14 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }:
 let
   border-size = config.var.theme.border-size;
   gaps-in = config.var.theme.gaps-in;
   gaps-out = config.var.theme.gaps-out;
   rounding = config.var.theme.rounding;
-in{
+in
+{
   programs = {
     waybar = {
       enable = true;
@@ -16,7 +16,7 @@ in{
         mainBar = {
           layer = "top";
           position = "top";
-          height = 32 ;
+          height = 32;
           margin-top = gaps-out;
           margin-left = gaps-out;
           margin-right = gaps-out;
@@ -29,7 +29,7 @@ in{
             "hyprland/workspaces"
           ];
 
-          modules-center= [
+          modules-center = [
             "custom/cava-internal"
           ];
 
@@ -43,25 +43,25 @@ in{
 
           "group/hardware" = {
             "orientation" = "horizontal";
-            "modules" = ["cpu" "memory" "temperature"];
+            "modules" = [ "cpu" "memory" "temperature" ];
           };
 
           "group/devices" = {
             "orientation" = "horizontal";
-            "modules" = ["network" "pulseaudio" "backlight" ];
+            "modules" = [ "network" "pulseaudio" "backlight" ];
           };
 
           "group/time" = {
             "orientation" = "horizontal";
-            "modules" = ["battery" "clock"  ];
-          };
-          
-          "hyprland/workspaces"= {
-            "format"= "";
-            "format-window-separator"= "";
+            "modules" = [ "battery" "clock" ];
           };
 
-          
+          "hyprland/workspaces" = {
+            "format" = "";
+            "format-window-separator" = "";
+          };
+
+
 
           "custom/launcher" = {
             "format" = "";
@@ -85,13 +85,13 @@ in{
             "format-bluetooth" = "{icon}  {format_source}";
             "format-bluetooth-muted" = "󰖁 ";
             "format-icons" = {
-              "headphone"= "";
-              "hands-free"= "";
-              "headset"= "";
-              "phone"= "";
-              "portable"= "";
-              "car"= "";
-              "default" = ["" "" ""];
+              "headphone" = "";
+              "hands-free" = "";
+              "headset" = "";
+              "phone" = "";
+              "portable" = "";
+              "car" = "";
+              "default" = [ "" "" "" ];
             };
             "on-click" = "pavucontrol";
             "tooltip" = false;
@@ -103,7 +103,7 @@ in{
             "format" = "{:%H:%M} ";
             "max-length" = 25;
             "tooltip-format" = "{:%A, %B %d, %Y (%R)} ";
-            "on-click"= "gnome-calendar";
+            "on-click" = "gnome-calendar";
           };
           "memory" = {
             "interval" = 1;
@@ -111,13 +111,13 @@ in{
             "states" = {
               "warning" = 85;
             };
-            "on-click"= "kitty -e 'btop'";
+            "on-click" = "kitty -e 'btop'";
           };
 
           "cpu" = {
             "interval" = 1;
             "format" = "󰍛";
-            "on-click"= "kitty -e 'btop'";
+            "on-click" = "kitty -e 'btop'";
           };
 
           "network" = {
@@ -130,7 +130,7 @@ in{
             "tooltip-format-wifi" = "{essid} ({signalStrength}%)  \n {ipaddr}";
             "tooltip-format-ethernet" = "{ifname} \n {ipaddr}";
             "tooltip-format-disconnected" = "Disconnected";
-            "on-click"= "kitty -e 'better-nmtui'";
+            "on-click" = "kitty -e 'better-nmtui'";
           };
 
 
@@ -152,7 +152,7 @@ in{
             "device" = "intel_backlight";
             "rotate" = 0;
             "format" = "{icon}";
-            "format-icons" = ["" "" "" "" "" "" "" "" ""];
+            "format-icons" = [ "" "" "" "" "" "" "" "" "" ];
             "on-scroll-down" = "brightnessctl set 1%-";
             "on-scroll-up" = "brightnessctl set 1%+";
             "reverse-scrolling" = true;
@@ -164,7 +164,7 @@ in{
             "critical-threshold" = 70;
             "format-critical" = "";
             "format" = "{icon}";
-            "format-icons" = ["" "" "" "" "" "" "" ""];
+            "format-icons" = [ "" "" "" "" "" "" "" "" ];
           };
 
           "battery" = {
@@ -177,143 +177,143 @@ in{
             "format-full" = "{icon}";
             "format-charging" = "󱐋{icon}";
             "format-plugged" = "{icon}";
-            "format-icons" = ["" "" "" "" ""];
+            "format-icons" = [ "" "" "" "" "" ];
             "tooltip-format" = "{capacity} %";
           };
         };
-      };  
+      };
       style = ''
-        *{
-          border-radius: ${toString (rounding+2)} ;
-          border : ${toString border-size};
-        }
-        #custom-cava-internal{
-          font-family: "Hack" ;
-        }
+                *{
+                  border-radius: ${toString (rounding+2)} ;
+                  border : ${toString border-size};
+                }
+                #custom-cava-internal{
+                  font-family: "Hack" ;
+                }
 
-        window#waybar {
-          background: rgba(0, 0, 0, 0);
-        }
+                window#waybar {
+                  background: rgba(0, 0, 0, 0);
+                }
 
-        #clock,
-        #battery,
-        #cpu,
-        #memory,
-        #temperature,
-        #network,
-        #pulseaudio,
-        #custom-media,
-        #tray,
-        #hyprland-workspaces,
-        #backlight,
-        #mode,
-        #custom-power,
-        #custom-launcher,
-        #idle_inhibitor {
-            padding: 0 10px;
-            font-size: 16px;
-        }
+                #clock,
+                #battery,
+                #cpu,
+                #memory,
+                #temperature,
+                #network,
+                #pulseaudio,
+                #custom-media,
+                #tray,
+                #hyprland-workspaces,
+                #backlight,
+                #mode,
+                #custom-power,
+                #custom-launcher,
+                #idle_inhibitor {
+                    padding: 0 10px;
+                    font-size: 16px;
+                }
         
-        #custom-menu{
-            font-size: 20px;
-            padding: 0 10px;
-        }
-        /*-----module groups----*/
+                #custom-menu{
+                    font-size: 20px;
+                    padding: 0 10px;
+                }
+                /*-----module groups----*/
 
 
-        .modules-right {
-            background-color: transparent; 
-        }
+                .modules-right {
+                    background-color: transparent; 
+                }
 
-        .modules-center {
-            margin: 0 0 0 0;
-            background-color: #${config.lib.stylix.colors.base00};
-            opacity: 0.8;
-        }
+                .modules-center {
+                    margin: 0 0 0 0;
+                    background-color: #${config.lib.stylix.colors.base00};
+                    opacity: 0.8;
+                }
 
-        .modules-left {
-            margin: 0 0 0 0;
-            background-color: #${config.lib.stylix.colors.base00};
-            opacity: 0.8;
-        }
+                .modules-left {
+                    margin: 0 0 0 0;
+                    background-color: #${config.lib.stylix.colors.base00};
+                    opacity: 0.8;
+                }
         
-        #custom-cava-internal{
-            background-color: #${config.lib.stylix.colors.base00};
-            padding: 0px 10px;
-            opacity: 0.8; 
-            font-size: 16px;
-        }
+                #custom-cava-internal{
+                    background-color: #${config.lib.stylix.colors.base00};
+                    padding: 0px 10px;
+                    opacity: 0.8; 
+                    font-size: 16px;
+                }
 
-        #workspaces {
-            margin: 5px 5px 5px 5px;
-            padding: 0px 0px;
-            background-color: #${config.lib.stylix.colors.base00};
-            color: #${config.lib.stylix.colors.base00};
-            transition: all 0.3s ease-in-out;
-            opacity: 0.8;
-        }
+                #workspaces {
+                    margin: 5px 5px 5px 5px;
+                    padding: 0px 0px;
+                    background-color: #${config.lib.stylix.colors.base00};
+                    color: #${config.lib.stylix.colors.base00};
+                    transition: all 0.3s ease-in-out;
+                    opacity: 0.8;
+                }
           
-        #workspaces button {
-            padding: 0px 6px;
-            margin: 0px 4px;
-            background-color: #${config.lib.stylix.colors.base01};
-            color: #${config.lib.stylix.colors.base01};
-            transition: all 0.3s ease-in-out;
-            opacity: 0.4;
-            font-size: 13px;
-        }
+                #workspaces button {
+                    padding: 0px 6px;
+                    margin: 0px 4px;
+                    background-color: #${config.lib.stylix.colors.base01};
+                    color: #${config.lib.stylix.colors.base01};
+                    transition: all 0.3s ease-in-out;
+                    opacity: 0.4;
+                    font-size: 13px;
+                }
         
-        #workspaces button.active {
-            min-width:40px;
-            background-size: 100% 400%;
-            background-color: #${config.lib.stylix.colors.base05};
-            color: #${config.lib.stylix.colors.base05};
-            transition: all 0.3s ease-in-out;
-            opacity: 1.0;
-        }
+                #workspaces button.active {
+                    min-width:40px;
+                    background-size: 100% 400%;
+                    background-color: #${config.lib.stylix.colors.base05};
+                    color: #${config.lib.stylix.colors.base05};
+                    transition: all 0.3s ease-in-out;
+                    opacity: 1.0;
+                }
         
-        #hardware {
-            background-color: #${config.lib.stylix.colors.base00};
-            opacity: 0.8;
-            margin: 0px 0px 0px 10px;
-            padding: 0px 3px;
-        }
+                #hardware {
+                    background-color: #${config.lib.stylix.colors.base00};
+                    opacity: 0.8;
+                    margin: 0px 0px 0px 10px;
+                    padding: 0px 3px;
+                }
 
-        #devices {
-            background-color: #${config.lib.stylix.colors.base00};
-            opacity: 0.8;
-            margin: 0px 0px 0px 10px;
-            padding: 0px 3px;
-        }
+                #devices {
+                    background-color: #${config.lib.stylix.colors.base00};
+                    opacity: 0.8;
+                    margin: 0px 0px 0px 10px;
+                    padding: 0px 3px;
+                }
 
-        #time {
-            background-color: #${config.lib.stylix.colors.base00};
-            opacity: 0.8;
-            margin: 0px 0px 0px 10px;
-            padding: 0px 6px 0px 3px;
-        }
+                #time {
+                    background-color: #${config.lib.stylix.colors.base00};
+                    opacity: 0.8;
+                    margin: 0px 0px 0px 10px;
+                    padding: 0px 6px 0px 3px;
+                }
 
-        #tray {
-            background-color: #${config.lib.stylix.colors.base00}; 
-            opacity: 0.8;
-            margin: 0px 0px 0px 10px;
-            padding: 0px 10px;
-        }
+                #tray {
+                    background-color: #${config.lib.stylix.colors.base00}; 
+                    opacity: 0.8;
+                    margin: 0px 0px 0px 10px;
+                    padding: 0px 10px;
+                }
 
 
-        #battery.warning:not(.charging) {
-	      color: #${config.lib.stylix.colors.base0A};
-        }
-        #battery.critical:not(.charging) {
-            color: #${config.lib.stylix.colors.base09};
-        }
-        #temperature.critical {
-            color: #${config.lib.stylix.colors.base09};
-        }
+                #battery.warning:not(.charging) {
+        	      color: #${config.lib.stylix.colors.base0A};
+                }
+                #battery.critical:not(.charging) {
+                    color: #${config.lib.stylix.colors.base09};
+                }
+                #temperature.critical {
+                    color: #${config.lib.stylix.colors.base09};
+                }
 
-        #pulseaudio.muted {
-            color: #${config.lib.stylix.colors.base09};
-        }
+                #pulseaudio.muted {
+                    color: #${config.lib.stylix.colors.base09};
+                }
         
       '';
     };
