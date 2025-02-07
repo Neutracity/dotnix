@@ -14,6 +14,7 @@
     # ./cura
     ./udiskie
     ./hyprlock
+    ./hypridle
     ./firefox
     ./pywalfox
     ./fastfetch
@@ -21,7 +22,7 @@
     ./helix
     ./cava
     ./spicetify
-    # ./gtk
+    ./gtk
     ./xdg
   ];
 }

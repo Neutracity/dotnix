@@ -63,8 +63,8 @@ in
 
       decoration = {
         rounding = rounding;
-        active_opacity = 1.0;
-        inactive_opacity = 0.95 ;
+        active_opacity = 0.95;
+        inactive_opacity = 0.80 ;
         blur = {
           enabled = true;
           brightness = 1.0;
@@ -83,7 +83,7 @@ in
 
         shadow = {
           enabled = true;
-          color = "rgba(00000055)";
+          # color = "rgba(00000055)";
           ignore_window = true;
           offset = "0 15";
           range = 100;
@@ -120,6 +120,10 @@ in
       workspace = [
         "1,name:PrimaryScreen, monitor:eDP-1"
         "2,name:SecondScreen, monitor:desc:Samsung Electric Company U28E590 HNMNC10967,gapsout:30"
+      ];
+
+      windowrulev2 = [
+        "size 50% 50%,floating:1"
       ];
 
       gestures = {

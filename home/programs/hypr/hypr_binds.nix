@@ -1,5 +1,5 @@
 {
-  wayland.windowManager.hyprland = {
+  wayland.windowManager.hyprland.settings = {
       "$mod" = "SUPER";
       "$terminal" = "kitty";
       "$fileManager" = "nemo";
@@ -78,7 +78,7 @@
         "Alt, Tab, movefocus, d"
 
 
-        "$mod, J, togglesplit"
+        "$mod, t, togglesplit"
         # "$mod+SHIFT, E, exec, eaccentmenu"
         # ", e, exec, eaccentmenu, longpress, 500"
       ];

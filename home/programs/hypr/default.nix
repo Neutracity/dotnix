@@ -1,6 +1,6 @@
 {
 	imports = [
-		./hyprr_settings.nix
-		./binds.nix
-	]
+		./hypr_settings.nix
+		./hypr_binds.nix
+	];
 }
