@@ -7,6 +7,11 @@
     minegrub-theme.url = "github:Lxtharia/minegrub-theme";
     minecraft-plymouth-theme.url = "github:nikp123/minecraft-plymouth-theme";
 
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -53,7 +58,7 @@
 
   };
 
-  outputs = { self, minecraft-plymouth-theme, nixpkgs, nixpkgs-sddm, home-manager, spicetify-nix, stylix, solaar, ... }@inputs:
+  outputs = { self, minecraft-plymouth-theme, ghostty, nixpkgs, nixpkgs-sddm, home-manager, spicetify-nix, stylix, solaar, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {

@@ -29,10 +29,6 @@
 
         #windows management
 
-        "$mod, left, movefocus, l"
-        "$mod, right, movefocus, r"
-        "$mod, up, movefocus, u"
-        "$mod, down, movefocus, d"
 
         "$mod, h, movefocus, l"
         "$mod, l, movefocus, r"
@@ -70,8 +66,8 @@
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
 
-        "$mod+Ctrl, Right, workspace, r+1"
-        "$mod+Ctrl, Left, workspace, r-1"
+        "$mod+Ctrl, l, workspace, r+1"
+        "$mod+Ctrl, h, workspace, r-1"
         "$mod+Ctrl, l, workspace, r+1"
         "$mod+Ctrl, h, workspace, r-1"
 
@@ -83,19 +79,19 @@
         # ", e, exec, eaccentmenu, longpress, 500"
       ];
 
-      unbind = [
-        # Disable Arrow Keys
-        ",Right"
-        ",Left"
-        ",Up"
-        ",Down"
-      ];
+      # unbind = [
+      #   # Disable Arrow Keys
+      #   ",Right"
+      #   ",Left"
+      #   ",Up"
+      #   ",Down"
+      # ];
 
 
-      bindo = [
-        ",e, exec, eaccentmenu"
-        ",a, exec, aaccentmenu"
-      ];
+      # bindo = [
+      #   ",e, exec, eaccentmenu"
+      #   ",a, exec, aaccentmenu"
+      # ];
 
       bindm = [
         "$mod, mouse:272, movewindow"

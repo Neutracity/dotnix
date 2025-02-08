@@ -10,6 +10,7 @@
     ./batsignal
     ./tmux
     ./btop
+    ./ghostty
     # ./eza
     # ./cura
     ./udiskie
@@ -22,7 +23,7 @@
     ./helix
     ./cava
     ./spicetify
-    ./gtk
+    # ./gtk
     ./xdg
   ];
 }

@@ -8,7 +8,6 @@
     [
       ./hardware-configuration.nix
       ./hardware-acceleration.nix
-      ./rider.nix
       ./bootloader.nix
       ./network.nix
       ./locales.nix

@@ -1,18 +1,18 @@
 { pkgs, inputs, ... }:
 {
-  environment.systemPackages = with pkgs; [
+environment.systemPackages = with pkgs; [
     (inputs.godot-bin.packages.x86_64-linux.godot-mono.override { msbuild = pkgs.bash; })
     inputs.zen-browser.packages."${system}".default
     weylus
     dotnet-sdk_7
-    # zsh-powerlevel10k
     playerctl
-    # osu-lazer
+    osu-lazer
     bluetui
     gnome-calendar
     vim
     rar
     unrar
+    unzip
     moonlight-qt
     wget
     unzip
@@ -20,20 +20,16 @@
     steam
     git
     tree
-    # prismlauncher
-    # audacity
     clinfo
     btop
     gnome-bluetooth
     pavucontrol
     mesa
     fzf
-    blender
-    # heroic
+    # blender
     thefuck
     gimp
     python3
-    # nmap
     vesktop
     brightnessctl
     cava
@@ -45,12 +41,17 @@
     nil
     btop
     ripgrep
-    # chromium
     libsForQt5.qt5.qtgraphicaleffects
     appimage-run
-    # gnome-online-accounts
     git-lfs
     alejandra
+
+    # jetbrains.rider
+    # dotnet-sdk_6
+    # msbuild
+    # mono
+    
+    
     (callPackage ./clife.nix { })
     (callPackage ./sddm-theme-wimst.nix { })
     # (callPackage ./cura.nix {})

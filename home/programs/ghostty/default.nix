@@ -1,0 +1,3 @@
+{
+  program.ghostty.enable = true;
+}

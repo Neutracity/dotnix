@@ -124,6 +124,16 @@ in
 
       windowrulev2 = [
         "size 50% 50%,floating:1"
+        "center, floating:1"
+        "float,class:mpv"
+        "center,class:mpv"
+        "size 50% 50%, class:mpv"
+
+        "float, title:^(Picture-in-Picture)$"
+        "pin, title:^(Picture-in-Picture)$"
+
+        "float, title:^(.*Bitwarden Password Manager.*)$"
+        "workspace 0 silent, title:^(Spotify( Premium)?)$"
       ];
 
       gestures = {
