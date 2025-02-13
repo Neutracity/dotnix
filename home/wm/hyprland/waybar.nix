@@ -198,7 +198,7 @@ in
                 }
 
                 window#waybar {
-                  background: rgba(0, 0, 0, 0);
+                  background: white;
                 }
 
                 #clock,
