@@ -13,36 +13,7 @@ let
   keyboardLayout = config.var.keyboardLayout;
 in
 {
-  home.packages = with pkgs; [
-    hyprpicker
-    hyprcursor
-    hypridle
-    mpv
-    imv
-    qt5.qtwayland
-    qt6.qtwayland
-    libsForQt5.qt5ct
-    qt6ct
-    hyprshot
-    swappy
-    wf-recorder
-    wlr-randr
-    wl-clipboard
-    brightnessctl
-    gnome-themes-extra
-    libva
-    dconf
-    nemo-with-extensions
-    wayland-utils
-    wayland-protocols
-    direnv
-    meson
-    swaylock-effects
-    cliphist
-  ];
-
   wayland.windowManager.hyprland = {
-    enable = true;
     settings = {
 
       monitor = [

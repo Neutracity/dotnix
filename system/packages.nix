@@ -51,19 +51,12 @@ environment.systemPackages = with pkgs; [
     mono
     
     
-    (callPackage ./clife.nix { })
+    # (callPackage ./clife.nix { })
     (callPackage ./sddm-theme-wimst.nix { })
     # (callPackage ./cura.nix {})
   ];
 
   #FONTS
-  fonts.packages = with pkgs.nerd-fonts; [
-    hack
-    fira-mono
-    fantasque-sans-mono
-    jetbrains-mono
-  ];
-
   virtualisation.docker.enable = true;
 
   #MODULES

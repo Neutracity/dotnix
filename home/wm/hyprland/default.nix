@@ -1,4 +1,4 @@
-{ config, lib, ...}:
+{ config, lib, pkgs, ...}:
 let
 	cfg = config.local.hex.hyprland;
 in{
@@ -8,7 +8,7 @@ in{
 		Depends on:
 			- idk
 			'';
-	config = lib.mkIf cfg.enable {
+
 		imports = [
 			./hypr_settings.nix
 			./hypr_binds.nix
@@ -17,5 +17,36 @@ in{
 			./waybar.nix
 			./dunst.nix
 		];
+	config = lib.mkIf cfg.enable {
+		home.packages = with pkgs; [
+	    hyprpicker
+	    hyprcursor
+	    hypridle
+	    mpv
+	    imv
+	    qt5.qtwayland
+	    qt6.qtwayland
+	    libsForQt5.qt5ct
+	    qt6ct
+	    hyprshot
+	    swappy
+	    wf-recorder
+	    wlr-randr
+	    wl-clipboard
+	    brightnessctl
+	    gnome-themes-extra
+	    libva
+	    dconf
+	    nemo-with-extensions
+	    wayland-utils
+	    wayland-protocols
+	    direnv
+	    meson
+	    swaylock-effects
+	    cliphist
+	  ];
+
+  	wayland.windowManager.hyprland.enable = true;
+
 	};
 }
