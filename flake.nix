@@ -87,13 +87,14 @@
         inherit pkgs;
         specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix
+          ./system/configuration.nix
           inputs.stylix.nixosModules.stylix
           solaar.nixosModules.default
           inputs.minegrub-theme.nixosModules.default
         ];
       };
       formatter.${system} = pkgs.nixpkgs-fmt;
+      lib = import ./lib;
       # Home manager declaration
       homeConfigurations."neutra" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;

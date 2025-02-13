@@ -1,14 +1,25 @@
 { config
-, pkgs
+, pkgs, lib
 , ...
 }: {
   imports = [
     ./programs
     ./src/script
-    ../stylix.nix
-    ../config-var.nix
-    ../variables.nix
+    ./style/stylix.nix
+    # ./style/gtk-qt.nix
+    ./wm
+    ./shell
+    ./app
+    ../system/config-var.nix
+    ../system/variables.nix
   ];
+  
+  config = {
+    local.hex = {
+      hyprland.enable = true;
+      kitty.enable = true;
+      ghostty.enable = true;
+    };
   home.username = config.var.username;
   home.homeDirectory = "/home/" + config.var.username;
 
@@ -16,18 +27,9 @@
   home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
+
     udiskie
     peaclock
-    cbonsai
-    pipes
-    cmatrix
-
-    # tui
-    yazi
-    nix-tree
-    lazygit
-    nix-inspect
-
 
   ];
 
@@ -102,4 +104,5 @@
   };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  };
 }
