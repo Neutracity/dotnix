@@ -4,6 +4,7 @@
     ./cliricing.nix
     ./tmux.nix
     ./cava.nix
+    ./zellij.nix
   ];
 
 }
