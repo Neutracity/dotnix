@@ -14,7 +14,7 @@
       active-opacity = 1;
       inactive-opacity = 0.89;
       blur = true;
-      border-size = 0;
+      border-size = 8;
       animation-speed = "medium"; # "fast" | "medium" | "slow"
       fetch = "fastfetch"; # "nerdfetch" | "neofetch" | "pfetch" | "none"
 

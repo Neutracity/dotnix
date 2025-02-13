@@ -2,9 +2,9 @@
 {
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/harmonic16-light.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
     polarity = "dark";
-    image = ../src/wallpaper/nix_white_1.jpg;
+    image = ../src/wallpaper/kanagawa_1.jpg;
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
