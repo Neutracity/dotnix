@@ -1,8 +1,8 @@
 {pkgs, config, lib, ...}:
 let
-	cfg = config.local.hex.ricing;
+	cfg = config.local.hex.cliricing;
 in{
-	options.local.hex.ricing.enable = lib.mkEnableOption ''
+	options.local.hex.cliricing.enable = lib.mkEnableOption ''
 		ricing related
 
 		Depends on:
@@ -14,6 +14,7 @@ in{
       cbonsai
       pipes
       cmatrix
+			peaclock
     ];
 	};
 }

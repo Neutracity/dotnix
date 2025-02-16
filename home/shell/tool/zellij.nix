@@ -11,6 +11,8 @@ in{
 	config = lib.mkIf cfg.enable {
 	    programs.zellij = {
 	      enable = true;
+				enableZshIntegration = config.local.hex.zsh.enable;
+				# enableFishIntegration = config.local.hex.fish.enable;
 		};
 	};
 

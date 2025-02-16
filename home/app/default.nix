@@ -5,5 +5,6 @@
     # ./cura.nix
     ./browser
     ./terminal
+    ./epita.nix
   ];
 }

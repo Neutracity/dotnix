@@ -9,6 +9,7 @@ let
   #rounding = config.var.theme.rounding;
   rounding = 8;
   font-size = config.stylix.fonts.sizes.popups;
+
 in
 {
 
@@ -18,13 +19,14 @@ in
     enable = true;
 
     settings = {
+      terminal = "ghostty";
       allow_markup = true;
       width = 450;
       show = "drun";
       prompt = "Apps";
       normal_window = true;
       layer = "top";
-      term = "kitty";
+      term = "ghostty";
       height = "305px";
       orientation = "vertical";
       halign = "fill";

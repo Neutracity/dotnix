@@ -4,7 +4,7 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
     polarity = "dark";
-    image = ../src/wallpaper/kanagawa_3.png.jpg;
+    image = ../src/wallpaper/kanagawa_3.png;
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
