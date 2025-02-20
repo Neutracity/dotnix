@@ -6,8 +6,8 @@
   networking.networkmanager.enable = true;
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 33471 4242 1701 9001 ];
-    allowedUDPPorts = [ 33471 51820 4242 ];
+    allowedTCPPorts = [ 33471 4242 1701 9001 24800];
+    allowedUDPPorts = [ 33471 51820 4242 24800];
     allowedTCPPortRanges = [{ from = 1714; to = 1764; }]; # for Gsconnect
     allowedUDPPortRanges = [{ from = 1714; to = 1764; }]; # for Gsconnect
   };

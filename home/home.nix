@@ -6,12 +6,14 @@
     ./src/script
     ./style/stylix.nix
     # ./style/gtk-qt.nix
+    ./utils
     ./wm
     ./shell
     ./app
     ../system/config-var.nix
     ../system/variables.nix
   ];
+
   
   config = {
     local.hex = {
@@ -23,11 +25,14 @@
       zsh.enable = true;
       cliricing.enable = true;
       epita.enable = true;
+      spotify.enable = true;
+      firefox.enable = true;
       # fish.enable = true;
     };
   home.username = config.var.username;
   home.homeDirectory = "/home/" + config.var.username;
 
+  programs.ssh.enable = true;
 
   
 
@@ -35,7 +40,7 @@
   home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
-
+    blender
     udiskie
     nerd-fonts.hack
     nerd-fonts.fira-mono
@@ -46,7 +51,7 @@
 
   home.sessionVariables = {
     # EDITOR = "";
-    # SHELL = if config.local.hex.zsh.enable then pkgs.zsh else pkgs.bash;
+    SHELL = if config.local.hex.zsh.enable then pkgs.zsh else pkgs.bash;
     # TERM = if config.local.hex.ghostty.enable then "ghostty" else if config.local.hex.kitty.enable then "kitty" else "xterm";
   };
   # Let Home Manager install and manage itself.

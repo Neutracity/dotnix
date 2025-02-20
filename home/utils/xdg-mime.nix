@@ -47,9 +47,9 @@ let
     (lib.genAttrs code (_: [ "nvim.desktop" ]))
     // (lib.genAttrs media (_: [ "mpv.desktop" ]))
     // (lib.genAttrs images (_: [ "mpv.desktop" ]))
-    // (lib.genAttrs browser (_: [ "firefox.desktop" ]))
+    // (lib.genAttrs browser (_: [ (if config.local.hex.zen.enable then "zen.desktop" else "firefox.desktop") ]))
     // {
-      "application/pdf" = [ "firefox.desktop" ];
+      "application/pdf" = [ (if config.local.hex.zen.enable then "zen.desktop" else "firefox.desktop") ];
       "x-scheme-handler/spotify" = [ "spotify.desktop" ];
       "x-scheme-handler/discord" = [ "vesktop.desktop" ];
       "inode/directory" = [

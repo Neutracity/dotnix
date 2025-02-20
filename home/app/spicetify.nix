@@ -5,10 +5,20 @@
 , spicetify-nix
 , ...
 }:
+
 let
+	cfg = config.local.hex.spotify;
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-in
-{
+in{
+	options.local.hex.spotify.enable = lib.mkEnableOption ''
+		spotify related
+
+		Depends on:
+			- idk
+			'';
+	config = lib.mkIf cfg.enable {
+
+
 
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
@@ -33,5 +43,5 @@ in
       marketplace
     ];
   };
+};
 }
-

@@ -1,8 +1,20 @@
 { pkgs
 , inputs
 , lib
+, config
 , ...
-}: {
+}: 
+let
+	cfg = config.local.hex.firefox;
+in{
+	options.local.hex.firefox.enable = lib.mkEnableOption ''
+		firefox related
+
+		Depends on:
+			- idk
+			'';
+	config = lib.mkIf cfg.enable {
+
   programs.firefox = {
     enable = true;
     package = pkgs.wrapFirefox pkgs.firefox-beta-unwrapped {
@@ -135,4 +147,5 @@
       #!/usr/bin/env bash
       ${pkgs.pywalfox-native}/bin/pywalfox install
     '';
+    };
 }
