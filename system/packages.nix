@@ -2,45 +2,27 @@
 {
 environment.systemPackages = with pkgs; [
     (inputs.godot-bin.packages.x86_64-linux.godot-mono.override { msbuild = pkgs.bash; })
-    inputs.zen-browser.packages."${system}".default
     weylus
     dotnet-sdk_7
     playerctl
     osu-lazer
-    bluetui
     gnome-calendar
-    vim
-    rar
-    unrar
-    unzip
     moonlight-qt
-    wget
-    unzip
     pavucontrol
     steam
     git
-    tree
-    clinfo
-    btop
     gnome-bluetooth
     pavucontrol
     mesa
-    fzf
-    # blender
     thefuck
     gimp
     python3
     vesktop
     brightnessctl
-    cava
-    zoxide
-    killall
     mpd
     home-manager
     nixd
     nil
-    btop
-    ripgrep
     libsForQt5.qt5.qtgraphicaleffects
     appimage-run
     git-lfs

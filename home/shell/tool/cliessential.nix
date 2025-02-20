@@ -10,13 +10,18 @@
     file
     fzf
     ripgrep
-    killall 
+    killall
+    wget
+    zoxide
+    killall
+
 
     # tui
     yazi
     nix-tree
     lazygit
     nix-inspect
+    bluetui
 
   ];
 

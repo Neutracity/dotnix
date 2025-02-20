@@ -1,4 +1,4 @@
-{ config, lib, ...}:
+{ config, lib, pkgs, ...}:
 let
 	cfg = config.local.hex.zen;
 in{
@@ -9,6 +9,6 @@ in{
 			- idk
 			'';
 	config = lib.mkIf cfg.enable {
-
+    inputs.zen-browser.packages."${pkgs.system}".default.enable = true;
 	};
 }
