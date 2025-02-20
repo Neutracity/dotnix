@@ -1,6 +1,18 @@
 { lib
+, config
 , ...
-}: {
+}:
+
+let
+	cfg = config.local.hex.helix;
+in{
+	options.local.hex.helix.enable = lib.mkEnableOption ''
+		helix related
+
+		Depends on:
+			- idk
+			'';
+	config = lib.mkIf cfg.enable {
   programs.helix = {
     enable = true;
     defaultEditor = lib.mkForce true;
@@ -32,5 +44,6 @@
         in
         [ (mk-lang "nix" [ "nil" ] { }) ];
     };
+  };
   };
 }

@@ -1,9 +1,9 @@
 { config, lib, pkgs, inputs, ...}:
 let
-	cfg = config.local.hex.zen;
+	cfg = config.local.hex.blender;
 in{
-	options.local.hex.zen.enable = lib.mkEnableOption ''
-		zen related
+	options.local.hex.blender.enable = lib.mkEnableOption ''
+		blender related
 
 		Depends on:
 			- idk

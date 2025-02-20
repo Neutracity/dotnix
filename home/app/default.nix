@@ -6,5 +6,6 @@
     ./browser
     ./terminal
     ./epita.nix
+    ./blender.nix
   ];
 }

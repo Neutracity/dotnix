@@ -1,7 +1,21 @@
 { pkgs
 , inputs
+, lib
+, config
 , ...
-}: {
+}:
+
+let
+	cfg = config.local.hex.nvim;
+in{
+	options.local.hex.nvim.enable = lib.mkEnableOption ''
+		nvim related
+
+		Depends on:
+			- idk
+			'';
+	config = lib.mkIf cfg.enable {
+
   nixpkgs = {
     overlays = [
       (final: prev: {
@@ -16,7 +30,6 @@
       })
     ];
   };
-
   programs.neovim =
     let
       toLua = str: "lua << EOF\n${str}\nEOF\n";
@@ -107,5 +120,6 @@
         ${builtins.readFile ./nvim/plugin/telescope.lua}
         ${builtins.readFile ./nvim/plugin/other.lua}
       '';
+    };
     };
 }

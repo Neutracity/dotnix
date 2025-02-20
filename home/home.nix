@@ -27,6 +27,10 @@
       epita.enable = true;
       spotify.enable = true;
       firefox.enable = true;
+      zen.enable = true;
+      blender.enable = false;
+      vim.enable = true;
+      hx.enable = true;
       # fish.enable = true;
     };
   home.username = config.var.username;

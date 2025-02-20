@@ -14,7 +14,6 @@ environment.systemPackages = with pkgs; [
     gnome-bluetooth
     pavucontrol
     mesa
-    thefuck
     gimp
     python3
     vesktop

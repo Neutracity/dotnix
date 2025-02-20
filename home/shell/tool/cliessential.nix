@@ -14,6 +14,7 @@
     wget
     zoxide
     killall
+    thefuck
 
 
     # tui
