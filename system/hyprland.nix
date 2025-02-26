@@ -11,6 +11,8 @@ in
     package = pkgs-unstable.mesa.drivers;
     package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
   };
-  programs.uwsm.enable = true;
-  programs.hyprland.withUWSM = true;
+  programs.uwsm.enable = false;
+  programs.hyprland.withUWSM = false;
+
+  systemd.additionalUpstreamSystemUnits = [ "dbus-org.freedesktop.login1.service" ];
 }

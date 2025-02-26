@@ -9,6 +9,7 @@ let
   rounding = config.var.theme.rounding;
 in
 {
+  stylix.targets.waybar.enable = false;
   programs = {
     waybar = {
       enable = true;
@@ -192,13 +193,14 @@ in
                 *{
                   border-radius: ${toString (rounding+2)} ;
                   border : ${toString border-size};
+                  
                 }
                 #custom-cava-internal{
                   font-family: "Hack" ;
                 }
 
                 window#waybar {
-                  background: white;
+                  background: transparent;
                 }
 
                 #clock,

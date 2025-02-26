@@ -83,7 +83,9 @@ in{
           ];
         };
         initExtra = ''
-          pokemon-colorscripts -r | tail -n +3 
+        ZELLIJ_AUTO_ATTACH=true
+        ZELLIJ_AUTO_EXIT=true
+        pokemon-colorscripts -r | tail -n +3
         '';
 
       };

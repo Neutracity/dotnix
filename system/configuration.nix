@@ -13,7 +13,7 @@
       ./locales.nix
       ./packages.nix
       ./users.nix
-      # ./hyprland.nix
+      ./hyprland.nix
       ./nixsettings.nix
       ./sddm.nix
       ./devices.nix

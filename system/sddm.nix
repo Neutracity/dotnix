@@ -1,8 +1,8 @@
 { config, pkgs, inputs, ... }:
 {
   services.displayManager.sddm = {
-    enable = false;
-    wayland.enable = false;
+    enable = true;
+    wayland.enable = true;
     theme = "where-is-my-sddm-theme";
   };
 }

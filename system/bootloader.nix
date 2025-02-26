@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 {
-  stylix.targets.plymouth.enable = false;
-  stylix.targets.grub.enable = false;
   boot = {
 
     plymouth = {
@@ -34,6 +32,7 @@
         useOSProber = true;
         efiSupport = true;
         efiInstallAsRemovable = true;
+        configurationLimit = 4;
         device = "nodev";
         minegrub-theme = {
           enable = true;

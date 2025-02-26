@@ -2,10 +2,16 @@
 {
 environment.systemPackages = with pkgs; [
     (inputs.godot-bin.packages.x86_64-linux.godot-mono.override { msbuild = pkgs.bash; })
+
+    
+    # blender
+    libGL
+    clinfo
+
     weylus
     dotnet-sdk_7
     playerctl
-    osu-lazer
+    # osu-lazer
     gnome-calendar
     moonlight-qt
     pavucontrol
@@ -14,7 +20,7 @@ environment.systemPackages = with pkgs; [
     gnome-bluetooth
     pavucontrol
     mesa
-    gimp
+    # gimp
     python3
     vesktop
     brightnessctl
@@ -27,9 +33,9 @@ environment.systemPackages = with pkgs; [
     git-lfs
     alejandra
 
-    jetbrains.rider
-    msbuild
-    mono
+    # jetbrains.rider
+    # msbuild
+    # mono
     
     
     # (callPackage ./clife.nix { })
@@ -38,7 +44,7 @@ environment.systemPackages = with pkgs; [
   ];
 
   #FONTS
-  virtualisation.docker.enable = true;
+  virtualisation.docker.enable = false;
 
   #MODULES
   programs.kdeconnect.enable = true;

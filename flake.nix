@@ -36,6 +36,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    blender-bin.url = "github:edolstra/nix-warez?dir=blender";
+
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,12 +59,12 @@
 
   };
 
-  outputs = { self, minecraft-plymouth-theme, ghostty, nixpkgs, nixpkgs-sddm, home-manager, spicetify-nix, stylix, solaar, ... }@inputs:
+  outputs = { self, minecraft-plymouth-theme, ghostty, blender-bin, nixpkgs, nixpkgs-sddm, home-manager, spicetify-nix, stylix, solaar, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ minecraft-plymouth-theme.overlay ];
+        overlays = [ minecraft-plymouth-theme.overlay blender-bin.overlays.default];
           config = {
             allowBroken = true;
             allowUnfree = true;
@@ -87,7 +89,6 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./system/configuration.nix
-          inputs.stylix.nixosModules.stylix
           solaar.nixosModules.default
           inputs.minegrub-theme.nixosModules.default
         ];
