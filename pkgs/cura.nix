@@ -12,14 +12,14 @@ let
     hash = "sha256-STtVeM4Zs+PVSRO3cI0LxnjRDhOxSlttZF+2RIXnAp4=";
   };
 
-  contents = appimageTools.extractType2 { inherit pname version src; };
+  contents = appimageTools.extractType2 { inherit name src; };
 in
 
 appimageTools.wrapType2 rec {
-  inherit pname version src;
+  inherit name src;
 
   extraInstallCommands = ''
-    mv $out/bin/${pname} $out/bin/${pname}
+    mv $out/bin/${name} $out/bin/${name}
 
     install -m 444 -D ${contents}/com.ultimaker.cura.desktop -t $out/share/applications
 

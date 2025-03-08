@@ -19,7 +19,8 @@ in
       monitor = [
         "eDP-1, 1920x1080@60.04Hz, auto, 1"
         "HDMI-A-1, 1920x1080@60.00Hz, 0x-1080, 1"
-        "desc:Samsung Electric Company U28E590 HNMNC10967, 3840x2160@60Hz, -2887x0, 1.33 "
+        # "desc:Samsung Electric Company U28E590 HNMNC10967, 3840x2160@60Hz, -2887x0, 1.33 "
+        "desc:Samsung Electric Company U28E590 HNMNC10967, 1920x1080@60.00Hz, 0x-1080, 1"
         # "HDMI-A-1, prefered, -3072x0, 1.25"
         ", preferred, auto, 1.25, mirror, eDP-1"
       ];

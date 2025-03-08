@@ -33,14 +33,14 @@ environment.systemPackages = with pkgs; [
     git-lfs
     alejandra
 
-    # jetbrains.rider
-    # msbuild
-    # mono
+    jetbrains.rider
+    msbuild
+    mono
     
     
     # (callPackage ./clife.nix { })
     (callPackage ./sddm-theme-wimst.nix { })
-    # (callPackage ./cura.nix {})
+    (callPackage ./../home/app/cura.nix {})
   ];
 
   #FONTS
@@ -76,7 +76,7 @@ environment.systemPackages = with pkgs; [
         settings = {
           # The main layer, if you choose to declare it in Nix
           main = {
-            capslock = "overload(control, esc)";
+            capslock = "esc";
             esc = "layer(arrow)";
             left = "noop";
             right = "noop";
