@@ -5,6 +5,7 @@
     ./tmux.nix
     ./cava.nix
     ./zellij.nix
+    ./git.nix
   ];
 
 }
