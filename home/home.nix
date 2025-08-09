@@ -26,7 +26,7 @@
       cliricing.enable = true;
       epita.enable = true;
       spotify.enable = true;
-      firefox.enable = true;
+      firefox.enable = false;
       zen.enable = true;
       blender.enable = true;
       nvim.enable = true;

@@ -4,7 +4,7 @@ let
 	# cfg = config.local.hex.hyprland;
 in{
 	# config = lib.mkIf cfg.enable {
-    services.xserver.enable = true;
+    services.xserver.enable = false;
     services.libinput.enable = true;
     programs.hyprland = {
         enable = true;

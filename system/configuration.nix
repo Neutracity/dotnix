@@ -1,7 +1,4 @@
 # My nixos config
-
-{ config, pkgs, inputs, ... }:
-
 {
 
   imports =
@@ -14,6 +11,7 @@
       ./packages.nix
       ./users.nix
       # ./hyprland.nix
+      ./plasma.nix
       ./nixsettings.nix
       ./sddm.nix
       ./devices.nix

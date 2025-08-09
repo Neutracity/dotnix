@@ -1,8 +1,6 @@
 { pkgs, inputs, ... }:
 {
 environment.systemPackages = with pkgs; [
-    (inputs.godot-bin.packages.x86_64-linux.godot-mono.override { msbuild = pkgs.bash; })
-
     
     # blender
     libGL
@@ -33,17 +31,11 @@ environment.systemPackages = with pkgs; [
     git-lfs
     alejandra
 
-    jetbrains.rider
-    msbuild
-    mono
-    
-    
+
     # (callPackage ./clife.nix { })
     (callPackage ./sddm-theme-wimst.nix { })
-    (callPackage ./../home/app/cura.nix {})
   ];
 
-  #FONTS
   virtualisation.docker.enable = false;
 
   #MODULES
@@ -54,13 +46,7 @@ environment.systemPackages = with pkgs; [
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/neutra/.dotfiles/";
   };
-  services.solaar = {
-    enable = false; # Enable the service
-    package = pkgs.solaar; # The package to use
-    window = "hide"; # Show the window on startup (show, *hide*, only [window only])
-    batteryIcons = "regular"; # Which battery icons to use (*regular*, symbolic, solaar)
-    extraArgs = ""; # Extra arguments to pass to solaar on startup
-  };
+
   services.printing.enable = true;
   services.avahi = {
     enable = true;
@@ -68,36 +54,15 @@ environment.systemPackages = with pkgs; [
     openFirewall = true;
 
   };
-  services.keyd = {
-    enable = true;
-    keyboards = {
-      default = {
-        ids = [ "*" ];
-        settings = {
-          # The main layer, if you choose to declare it in Nix
-          main = {
-            capslock = "esc";
-            esc = "layer(arrow)";
-            left = "noop";
-            right = "noop";
-            down = "noop";
-            up = "noop";
-          };
-          arrow = {
-            h = "left";
-            k = "up";
-            j = "down";
-            l = "right";
-          };
-        };
-        extraConfig = ''
-          # put here any extra-config, e.g. you can copy/paste here directly a configuration, just remove the ids part
-        '';
-      };
-    };
-  };
   programs.nix-ld.enable = true;
   services.udisks2.enable = true;
+
+  programs.git = {
+    enable = true;
+    userName  = "neutra";
+    userEmail = "neutracity@gmail.com";
+  };
+
 
 
 }
