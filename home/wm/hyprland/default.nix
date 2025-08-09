@@ -14,7 +14,7 @@ in{
 			./hypr_binds.nix
 			./hypridle.nix
 			./hyprlock.nix
-			./waybar.nix
+			#./waybar.nix
 			./dunst.nix
 		];
 	config = lib.mkIf cfg.enable {

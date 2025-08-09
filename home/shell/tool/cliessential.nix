@@ -14,7 +14,7 @@
     wget
     zoxide
     killall
-    thefuck
+    pay-respects
 
 
     # tui

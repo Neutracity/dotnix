@@ -52,6 +52,7 @@ in{
           nu = "sudo nixos-rebuild switch --upgrade-all /home/neutra/.dotfiles";
           fu = "nix flake update -I /home/neutra/.dotfiles/flake.nix";
           hr = "nh home switch /home/neutra/.dotfiles";
+          ns = "nix-shell --comand zsh -p";
           se = "sudoedit";
           ff = "fastfetch";
           neofetch = "fastfetch";
@@ -79,12 +80,9 @@ in{
             "zoxide"
             "fzf"
             "sudo"
-            "thefuck"
           ];
         };
         initExtra = ''
-        ZELLIJ_AUTO_ATTACH=true
-        ZELLIJ_AUTO_EXIT=true
         pokemon-colorscripts -r | tail -n +3
         '';
 

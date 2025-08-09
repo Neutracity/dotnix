@@ -20,7 +20,8 @@
       hyprland.enable = true;
       kitty.enable = true;
       ghostty.enable = true;
-      zellij.enable = true;
+      vscode.enable = true;
+      zellij.enable = false;
       tmux.enable = false;
       zsh.enable = true;
       cliricing.enable = true;
@@ -54,7 +55,7 @@
 
   home.sessionVariables = {
     # EDITOR = "";
-    # SHELL = if config.local.hex.zsh.enable then pkgs.zsh else pkgs.bash;
+    SHELL = if config.local.hex.zsh.enable then pkgs.zsh else pkgs.bash;
     # TERM = if config.local.hex.ghostty.enable then "ghostty" else if config.local.hex.kitty.enable then "kitty" else "xterm";
   };
   # Let Home Manager install and manage itself.

@@ -21,16 +21,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    solaar = {
-      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    godot-bin = {
-      url = "github:Damianu/godot4-bin";
-      inputs.nixpkgs.follows = "nixpkgs"; #Might prevent some OpenGL issues
-    };
-
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -52,14 +42,11 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    nixpkgs-sddm = {
-      url = "github:NixOS/nixpkgs/1997e4aa514312c1af7e2bda7fad1644e778ff26";
-    };
 
 
   };
 
-  outputs = { self, minecraft-plymouth-theme, ghostty, blender-bin, nixpkgs, nixpkgs-sddm, home-manager, spicetify-nix, stylix, solaar, ... }@inputs:
+  outputs = { self, minecraft-plymouth-theme, ghostty, blender-bin, nixpkgs, home-manager, spicetify-nix, stylix, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -89,7 +76,6 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./system/configuration.nix
-          solaar.nixosModules.default
           inputs.minegrub-theme.nixosModules.default
         ];
       };
