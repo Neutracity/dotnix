@@ -33,7 +33,6 @@ environment.systemPackages = with pkgs; [
 
 
     # (callPackage ./clife.nix { })
-    (callPackage ./sddm-theme-wimst.nix { })
   ];
 
   virtualisation.docker.enable = false;

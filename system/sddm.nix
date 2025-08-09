@@ -5,4 +5,10 @@
     wayland.enable = true;
     theme = "where-is-my-sddm-theme";
   };
+
+  environment.systemPackages = with pkgs; [
+    # sddm theme
+    (callPackage ./sddm-theme-wimst.nix { })
+  ];
+
 }

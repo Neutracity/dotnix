@@ -1,13 +1,16 @@
 { pkgs, ... }:
 
 {
+
   boot = {
 
     plymouth = {
       enable = true;
-      theme = "mc";
+      theme = "hexagon_dots";
       themePackages = [
-        pkgs.plymouth-minecraft-theme
+        (pkgs.adi1090x-plymouth-themes.override {
+          selected_themes = [ "hexagon_dots" ];
+        })
       ];
 
     };
