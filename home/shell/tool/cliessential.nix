@@ -15,6 +15,7 @@
     zoxide
     killall
     pay-respects
+    tlrc
 
 
     # tui
