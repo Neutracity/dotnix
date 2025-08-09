@@ -32,6 +32,7 @@
       blender.enable = true;
       nvim.enable = true;
       helix.enable = true;
+      quickshell.enable = true;
       # fish.enable = true;
     };
   home.username = config.var.username;

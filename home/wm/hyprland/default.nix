@@ -16,6 +16,7 @@ in{
 			./hyprlock.nix
 			#./waybar.nix
 			./dunst.nix
+			./quickshell/quickshell.nix
 		];
 	config = lib.mkIf cfg.enable {
 		home.packages = with pkgs; [
@@ -46,7 +47,11 @@ in{
 	    cliphist
 	  ];
 
-  	wayland.windowManager.hyprland.enable = true;
-
+		wayland.windowManager.hyprland = {
+			enable = true;
+			# set the Hyprland and XDPH packages to null to use the ones from the NixOS module
+			package = null;
+			portalPackage = null;
+		};
 	};
 }

@@ -1,15 +1,9 @@
-{lib, config, pkgs, inputs, ... }:
-let
-  pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-	# cfg = config.local.hex.hyprland;
-in{
-	# config = lib.mkIf cfg.enable {
-    services.xserver.enable = false;
-    services.libinput.enable = true;
-    programs.hyprland = {
-        enable = true;
-        # set the Hyprland and XDPH packages to null to use the ones from the NixOS module
-        package = null;
-      };
-  # };
+{inputs, pkgs, ...}: {
+  programs.hyprland = {
+    enable = true;
+    # set the flake package
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # make sure to also set the portal package, so that they are in sync
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
 }

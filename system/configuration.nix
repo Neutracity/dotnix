@@ -10,7 +10,7 @@
       ./locales.nix
       ./packages.nix
       ./users.nix
-      # ./hyprland.nix
+      ./hyprland.nix
       ./plasma.nix
       ./nixsettings.nix
       ./sddm.nix
