@@ -126,12 +126,13 @@ in
 
 
       exec-once = [
-        "waybar"
+        #"waybar"
         "uwsm finalize"
         "hypridle"
-        "dunst -conf .config/dunst/dunstrc"
-        "hyprpaper"
+        #"dunst -conf .config/dunst/dunstrc"
+        #"hyprpaper"
         "wl-paste --watch cliphist store"
+        "quickshell -c caelestia"
       ];
 
       env = [

@@ -26,6 +26,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # caelestia = {
+    #   url = "github:caelestia-dots/shell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -46,6 +51,8 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+
+  
 
 
 
@@ -91,7 +98,7 @@
         inherit pkgs;
         modules = [
           ./home/home.nix
-          stylix.homeManagerModules.stylix
+          stylix.homeModules.stylix
         ];
         extraSpecialArgs = {
           inherit inputs spicetify-nix;

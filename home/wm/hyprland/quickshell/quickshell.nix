@@ -8,9 +8,12 @@ in{
 		Depends on:
 			- idk
 			'';
+		imports = [
+			./caelestia.nix
+		];
 	config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       quickshell
-          ];
+  	];
   };
 }

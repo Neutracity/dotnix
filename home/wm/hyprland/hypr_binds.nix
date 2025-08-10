@@ -3,7 +3,7 @@
       "$mod" = "SUPER";
       "$terminal" = "kitty";
       "$fileManager" = "nemo";
-      "$menu" = "menu";
+      "$menu" = "caelestia:launcher";
       "$browser" = "zen";
 
       bind = [
@@ -13,16 +13,17 @@
         "$mod, C, killactive"
         "$mod, F, fullscreen"
         "Alt_L, F4, killactive"
-        "$mod, R, exec, $menu"
+        #"$mod, R, exec, $menu"
+        "$mod, R, global, $menu"
 
-        # My customs keybinds
 
         "$mod SHIFT, S, exec, swappyfile=$(hyprshot -o /home/neutra/media/pictures/screenshots -m region -- echo); swappy -f $swappyfile -o $swappyfile "
         "$mod SHIFT, P, exec, hyprpicker --autocopy"
         "$mod SHIFT, M, exec, pkill waybar || waybar "
         "$mod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
         "$mod SHIFT, O, exec, hyprlock"
-        "$mod, BackSpace, exec, powermenu"
+        #"$mod, BackSpace, exec, powermenu"
+        "$mod, BackSpace, global, caelestia:session"
         "$mod, S, exec, moonlight stream DESKTOP-NALUKC5 Desktop"
         "$mod, E, exec, $fileManager"
         "$mod, Space, togglesplit"
