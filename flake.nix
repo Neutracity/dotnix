@@ -26,10 +26,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # caelestia = {
-    #   url = "github:caelestia-dots/shell";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     stylix = {
       url = "github:danth/stylix";
@@ -58,7 +58,7 @@
 
   };
 
-  outputs = { self, minecraft-plymouth-theme, ghostty, blender-bin, nixpkgs, home-manager, spicetify-nix, stylix, ... }@inputs:
+  outputs = { self, minecraft-plymouth-theme, ghostty, blender-bin, nixpkgs, home-manager, spicetify-nix, caelestia-shell, stylix, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -99,6 +99,7 @@
         modules = [
           ./home/home.nix
           stylix.homeModules.stylix
+
         ];
         extraSpecialArgs = {
           inherit inputs spicetify-nix;
