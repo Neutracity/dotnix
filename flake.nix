@@ -7,8 +7,15 @@
     minegrub-theme.url = "github:Lxtharia/minegrub-theme";
     minecraft-plymouth-theme.url = "github:nikp123/minecraft-plymouth-theme";
 
+    bongocat = {
+      url = "github:saatvik333/wayland-bongocat";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ghostty = {
       url = "github:ghostty-org/ghostty";
+      inputs.nixpkgs.follows = "nixpkgs";
+
     };
 
     zen-browser = {
@@ -58,7 +65,7 @@
 
   };
 
-  outputs = { self, minecraft-plymouth-theme, ghostty, blender-bin, nixpkgs, home-manager, spicetify-nix, caelestia-shell, stylix, ... }@inputs:
+  outputs = { self, minecraft-plymouth-theme, ghostty, blender-bin, nixpkgs, home-manager, spicetify-nix, bongocat, caelestia-shell, stylix, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -99,6 +106,7 @@
         modules = [
           ./home/home.nix
           stylix.homeModules.stylix
+          inputs.bongocat.nixosModules.default
 
         ];
         extraSpecialArgs = {

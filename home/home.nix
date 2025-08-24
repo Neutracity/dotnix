@@ -33,6 +33,7 @@
       nvim.enable = true;
       helix.enable = true;
       quickshell.enable = true;
+      bongocat.enable = true;
       # fish.enable = true;
     };
   home.username = config.var.username;

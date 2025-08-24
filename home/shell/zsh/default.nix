@@ -52,7 +52,7 @@ in{
           nu = "sudo nixos-rebuild switch --upgrade-all /home/neutra/.dotfiles";
           fu = "nix flake update -I /home/neutra/.dotfiles/flake.nix";
           hr = "nh home switch /home/neutra/.dotfiles";
-          ns = "nix-shell --comand zsh -p";
+          ns = "nix-shell --command zsh -p";
           se = "sudoedit";
           ff = "fastfetch";
           neofetch = "fastfetch";

@@ -9,7 +9,7 @@ environment.systemPackages = with pkgs; [
     weylus
     dotnet-sdk_7
     playerctl
-    # osu-lazer
+    osu-lazer
     gnome-calendar
     moonlight-qt
     pavucontrol
